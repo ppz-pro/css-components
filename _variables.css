@@ -1,0 +1,26 @@
+:root {
+  --ppz-ccs-color-h: 122;
+  --ppz-ccs-color-s: 45%;
+  --ppz-ccs-color-l: 58%;
+  --ppz-ccs-color-base: var(--ppz-ccs-color-h), var(--ppz-ccs-color-s), var(--ppz-ccs-color-l);
+  --ppz-ccs-color: hsl(var(--ppz-ccs-color-base));
+  
+  --ppz-ccs-color-back-h: 0;
+  --ppz-ccs-color-back-s: 0%;
+  --ppz-ccs-color-back-l: 100%;
+  --ppz-ccs-color-back-base: var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l);
+  --ppz-ccs-color-back: hsl(var(--ppz-ccs-color-back-base));
+
+  --ppz-ccs-color-fore-h: 0;
+  --ppz-ccs-color-fore-s: 0%;
+  --ppz-ccs-color-fore-l: 0%;
+  --ppz-ccs-color-fore-base: var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l);
+  --ppz-ccs-color-fore: hsl(var(--ppz-ccs-color-fore-base));
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --ppz-ccs-color-fore: #fff;
+    --ppz-ccs-color-fore: #000;
+  }
+} */

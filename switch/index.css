@@ -1,0 +1,60 @@
+@import url('../_base.css');
+
+.ppz-ccs.switch {
+  --height: 2em;
+  --ratio: .618;
+  --control-height-ratio: .76;
+  
+  --width: calc(var(--height) / var(--ratio));
+  --control-height: calc(var(--height) * var(--control-height-ratio));
+  --control-margin: calc(calc(var(--height) - var(--control-height)) / 2);
+  
+  --ani-duration: .3s;
+  --box-shadow: 0 0 var(--control-margin) hsla(var(--ppz-ccs-color-fore-base), .1);
+
+  height: var(--height);
+  width: var(--width);
+  border-radius: calc(var(--height) / 2);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--box-shadow);
+}
+
+.ppz-ccs.switch input {
+  visibility: hidden;
+  font-size: inherit;
+}
+
+.ppz-ccs.switch input::before {
+  content: '';
+  display: block;
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: hsla(var(--ppz-ccs-color-fore-base), .1);
+  transition: var(--ani-duration) background-color;
+}
+.ppz-ccs.switch input::after {
+  content: '';
+  transition: var(--ani-duration) transform;
+  display: block;
+  visibility: visible;
+  position: absolute;
+  top: var(--control-margin);
+  left: var(--control-margin);
+  border-radius: 50%;
+  height: var(--control-height);
+  width: var(--control-height);
+  background: hsl(var(--ppz-ccs-color-back-base));
+  box-shadow: var(--box-shadow);
+}
+.ppz-ccs.switch input:checked::after {
+  transform: translate(calc(calc(calc(1 / var(--ratio)) - 1) * var(--height)), 0);
+}
+
+.ppz-ccs.switch input:checked::before {
+  background-color: var(--ppz-ccs-color);
+}
