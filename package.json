@@ -1,0 +1,18 @@
+{
+  "name": "@ppzp/css-components",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppz-pro/css-components.git"
+  },
+  "keywords": [
+    "ppz"
+  ],
+  "author": "gy",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ppz-pro/css-components/issues"
+  },
+  "homepage": "https://github.com/ppz-pro/css-components#readme"
+}
