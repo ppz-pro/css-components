@@ -6,10 +6,10 @@
 }
 
 .ppz-ccs label, label.ppz-ccs {
-  display: inline-block;
+  display: block;
 }
 .ppz-ccs input, input.ppz-ccs {
-  display: inline-block;
+  display: block;
   margin: 0;
   padding: 0;
   font-size: inherit;
