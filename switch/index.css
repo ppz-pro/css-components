@@ -1,23 +1,27 @@
 @import url('../base.css');
 
 .ppz-ccs.switch {
+  /* customizable */
+  --background-color-off: hsla(var(--ppz-ccs-color-fore-base), .1);
+  --background-color-on: var(--ppz-ccs-color-success);
+
   --height: 2em;
   --ratio: .618;
   --control-height-ratio: .76;
-  
+  --ani-duration: .3s;
+  --control-color: #fff;
+
+  /* calculated, but customizable(not suggested) */
   --width: calc(var(--height) / var(--ratio));
   --control-height: calc(var(--height) * var(--control-height-ratio));
   --control-margin: calc(calc(var(--height) - var(--control-height)) / 2);
-  
-  --ani-duration: .3s;
-  --box-shadow: 0 0 var(--control-margin) hsla(var(--ppz-ccs-color-fore-base), .1);
+  --control-box-shadow: 0 0 calc(var(--control-margin) / 2) hsla(var(--ppz-ccs-color-fore-base), .2);
 
   height: var(--height);
   width: var(--width);
   border-radius: calc(var(--height) / 2);
   overflow: hidden;
   position: relative;
-  box-shadow: var(--box-shadow);
 }
 
 .ppz-ccs.switch input {
@@ -34,7 +38,7 @@
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: hsla(var(--ppz-ccs-color-fore-base), .1);
+  background-color: var(--background-color-off);
   transition: var(--ani-duration) background-color;
 }
 .ppz-ccs.switch input::after {
@@ -48,13 +52,13 @@
   border-radius: 50%;
   height: var(--control-height);
   width: var(--control-height);
-  background: hsl(var(--ppz-ccs-color-back-base));
-  box-shadow: var(--box-shadow);
+  background: var(--control-color);
+  box-shadow: var(--control-box-shadow);
 }
 .ppz-ccs.switch input:checked::after {
   transform: translate(calc(calc(calc(1 / var(--ratio)) - 1) * var(--height)), 0);
 }
 
 .ppz-ccs.switch input:checked::before {
-  background-color: var(--ppz-ccs-color);
+  background-color: var(--background-color-on);
 }

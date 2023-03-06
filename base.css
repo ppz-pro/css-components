@@ -1,5 +1,10 @@
 @import url('./variables.css');
 
+:root {
+  color: var(--ppz-ccs-color-fore);
+  background-color: var(--ppz-ccs-color-back);
+}
+
 .ppz-ccs label, label.ppz-ccs {
   display: inline-block;
 }
