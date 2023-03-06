@@ -16,6 +16,8 @@
   --ppz-ccs-color-fore-l: 0%;
   --ppz-ccs-color-fore-base: var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l);
   --ppz-ccs-color-fore: hsl(var(--ppz-ccs-color-fore-base));
+
+  --ppz-ccs-color-ratio: 1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,5 +33,7 @@
     --ppz-ccs-color-back-l: 0%;
     --ppz-ccs-color-back-base: var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l);
     --ppz-ccs-color-back: hsl(var(--ppz-ccs-color-back-base));
+
+    --ppz-ccs-color-ratio: 2;
   }
 }

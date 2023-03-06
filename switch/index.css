@@ -2,20 +2,20 @@
 
 .ppz-ccs.switch {
   /* customizable */
-  --background-color-off: hsla(var(--ppz-ccs-color-fore-base), .1);
+  --background-color-off: hsla(var(--ppz-ccs-color-fore-base), calc(.1 * var(--ppz-ccs-color-ratio)));
   --background-color-on: var(--ppz-ccs-color-success);
 
   --height: 2em;
   --ratio: .618;
   --control-height-ratio: .76;
-  --ani-duration: .3s;
+  --ani-duration: .18s;
   --control-color: #fff;
 
   /* calculated, but customizable(not suggested) */
   --width: calc(var(--height) / var(--ratio));
   --control-height: calc(var(--height) * var(--control-height-ratio));
   --control-margin: calc(calc(var(--height) - var(--control-height)) / 2);
-  --control-box-shadow: 0 0 calc(var(--control-margin) / 2) hsla(var(--ppz-ccs-color-fore-base), .2);
+  --control-box-shadow: 0 0 var(--control-margin) hsla(var(--ppz-ccs-color-fore-base), calc(.2 * var(--ppz-ccs-color-ratio)));
 
   height: var(--height);
   width: var(--width);
