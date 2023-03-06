@@ -18,6 +18,7 @@
   --ppz-ccs-color-fore: hsl(var(--ppz-ccs-color-fore-base));
 
   --ppz-ccs-color-ratio: 1;
+  --ppz-ccs-ani-duration: .18s;
 }
 
 @media (prefers-color-scheme: dark) {

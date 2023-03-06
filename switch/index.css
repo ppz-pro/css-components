@@ -8,7 +8,6 @@
   --height: 2em;
   --ratio: .618;
   --control-height-ratio: .76;
-  --ani-duration: .18s;
   --control-color: #fff;
 
   /* calculated, but customizable(not suggested) */
@@ -36,7 +35,7 @@
   bottom: 0;
   border-radius: calc(var(--height) / 2);
   background-color: var(--background-color-off);
-  transition: var(--ani-duration) background-color;
+  transition: var(--ppz-ccs-ani-duration) background-color;
 }
 .ppz-ccs.switch:checked::before {
   background-color: var(--background-color-on);
@@ -47,7 +46,7 @@
   display: block;
   visibility: visible;
 
-  transition: var(--ani-duration) transform;
+  transition: var(--ppz-ccs-ani-duration) transform;
   position: absolute;
   top: var(--control-margin);
   left: var(--control-margin);
