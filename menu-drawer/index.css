@@ -1,0 +1,46 @@
+@import url('../base.css');
+@import url('../menu-icon/index.css');
+
+.ppz-ccs.menu-drawer {
+  --width: 20em;
+
+  height: 100%;
+  transition: width var(--ppz-ccs-ani-duration);
+  position: relative;
+}
+
+/* checked menu drawer */
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:checked) {
+  width: var(--width);
+}
+/* unchecked menu drawer */
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:not(:checked)) {
+  width: 0;
+}
+
+/* menu icon */
+.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child {
+  position: absolute;
+  transition: transform var(--ppz-ccs-ani-duration);
+  z-index: 1;
+  left: 100%; /* 在外面 */
+}
+/* checked menu icon */
+.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child:checked {
+  transform: translateX(-100%); /* 左移一个身位 */
+}
+
+/* menu view */
+.ppz-ccs.menu-drawer > .ppz-ccs.menu-view {
+  width: var(--width);
+  height: 100%;
+  
+  transition: all var(--ppz-ccs-ani-duration);
+  opacity: 0;
+  transform: translateX(-100%);
+}
+/* checked menu view */
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:checked) > .ppz-ccs.menu-view {
+  opacity: 1;
+  transform: translateX(0)
+}
