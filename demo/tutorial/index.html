@@ -64,8 +64,10 @@ body > .menu-drawer .menu-view menu li a:hover {
 }
 body > main {
   flex: 1;
-  height: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
   overflow: auto;
+  padding: 2em 5em;
 }
 body > main .page {
   display: none;
@@ -76,4 +78,4 @@ body > main .page:target {
 body > main:not(:has(.page:target)) .page:first-child {
   display: block;
 }
-</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li><li><a href="#switch">switch</a></li><li><a href="#menu-icon">menu-icon</a></li><li><a href="#menu-drawer">menu-drawer</a></li></menu></div></div><main><div class="page" id="get-started"><div>getting started</div></div><div class="page" id="switch"><div>switch</div></div><div class="page" id="menu-icon"><div>menu icon</div></div><div class="page" id="menu-drawer"><div>menu-drawer</div></div></main></body></html>
+</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li><li><a href="#switch">switch</a></li><li><a href="#menu-icon">menu-icon</a></li><li><a href="#menu-drawer">menu-drawer</a></li></menu></div></div><main><div class="page" id="get-started"><h2>getting started</h2></div><div class="page" id="switch"><h2>switch</h2></div><div class="page" id="menu-icon"><h2>menu icon</h2></div><div class="page" id="menu-drawer"><h2>menu-drawer</h2></div></main></body></html>
