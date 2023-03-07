@@ -8,6 +8,8 @@
 
   --line-width-half: calc(var(--line-width) / 2);
 
+  cursor: pointer;
+  box-sizing: content-box; /* 允许设置内边距而不改变形状 */
   height: var(--size);
   width: var(--size);
   position: relative;

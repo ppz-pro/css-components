@@ -10,11 +10,11 @@
 }
 
 /* checked menu drawer */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:checked) {
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :checked) {
   width: var(--width);
 }
 /* unchecked menu drawer */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:not(:checked)) {
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :not(:checked)) {
   width: 0;
 }
 
@@ -26,7 +26,7 @@
   left: 100%; /* 在外面 */
 }
 /* checked menu icon */
-.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child:checked {
+.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child:has(:checked) {
   transform: translateX(-100%); /* 左移一个身位 */
 }
 
@@ -40,7 +40,7 @@
   transform: translateX(-100%);
 }
 /* checked menu view */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child:checked) > .ppz-ccs.menu-view {
+.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :checked) > .ppz-ccs.menu-view {
   opacity: 1;
   transform: translateX(0)
 }
