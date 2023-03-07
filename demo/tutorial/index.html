@@ -36,4 +36,13 @@ body > main {
   height: 100%;
   overflow: auto;
 }
-</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li></menu></div></div><main><div class="page" id="get-started"><div>getting started</div></div></main></body></html>
+body > main .page {
+  display: none;
+}
+body > main .page:target {
+  display: block;
+}
+body > main:not(:has(.page:target)) .page:first-child {
+  display: block;
+}
+</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li><li><a href="#switch">switch</a></li><li><a href="#menu-icon">menu-icon</a></li><li><a href="#menu-drawer">menu-drawer</a></li></menu></div></div><main><div class="page" id="get-started"><div>getting started</div></div><div class="page" id="switch"><div>switch</div></div><div class="page" id="menu-icon"><div>menu icon</div></div><div class="page" id="menu-drawer"><div>menu-drawer</div></div></main></body></html>

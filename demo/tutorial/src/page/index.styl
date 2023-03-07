@@ -28,3 +28,11 @@ body
     flex: 1
     height: 100%
     overflow: auto
+    // css router
+    .page
+      display: none
+      &:target
+        display: block
+    &:not(:has(.page:target)) // 不存在选中的 .page 时
+      .page:first-child
+        display: block
