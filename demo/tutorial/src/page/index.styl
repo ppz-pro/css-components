@@ -13,16 +13,40 @@ body
   height: 100vh
   display: flex
   & > .menu-drawer
+    --width: 16em !important
     .menu-icon-wrapper
       padding: 1em
       cursor: pointer
+      opacity: .6
+      &:hover
+        opacity: 1
     .menu-view
-      padding: 1em
+      --padding: 1em
       box-sizing: border-box
-      background: "hsla(var(--ppz-ccs-color-fore-base), .06)" % 1
+      background: "hsla(var(--ppz-ccs-color-fore-base), .01)" % 1
       h1
+        padding: var(--padding)
         font-size: inherit
         font-weight: bold
+      menu
+        border-top: 1px solid "hsla(var(--ppz-ccs-color-fore-base), .04)" % 1
+        padding: 0
+        margin: 0
+        li
+          list-style: none
+          a
+            display: block
+            color: "hsla(var(--ppz-ccs-color-fore-base), .6)" % 1
+            transition: all var(--ani-duration);
+            padding: var(--padding);
+            text-decoration: none
+            &::before
+              content: '>'
+              margin: 0 1em 0 .15em
+          a:hover // :not(:local-link)
+            // 所有浏览器未支持 :local-link https://developer.mozilla.org/en-US/docs/Web/CSS/:local-link
+            color: "hsla(var(--ppz-ccs-color-fore-base), 1)" % 1
+            background: "hsla(var(--ppz-ccs-color-fore-base), .04)" % 1
 
   & > main
     flex: 1

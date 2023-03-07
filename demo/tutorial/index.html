@@ -18,18 +18,49 @@ body {
   height: 100vh;
   display: flex;
 }
+body > .menu-drawer {
+  --width: 16em !important;
+}
 body > .menu-drawer .menu-icon-wrapper {
   padding: 1em;
   cursor: pointer;
+  opacity: 0.6;
+}
+body > .menu-drawer .menu-icon-wrapper:hover {
+  opacity: 1;
 }
 body > .menu-drawer .menu-view {
-  padding: 1em;
+  --padding: 1em;
   box-sizing: border-box;
-  background: hsla(var(--ppz-ccs-color-fore-base), .06);
+  background: hsla(var(--ppz-ccs-color-fore-base), .01);
 }
 body > .menu-drawer .menu-view h1 {
+  padding: var(--padding);
   font-size: inherit;
   font-weight: bold;
+}
+body > .menu-drawer .menu-view menu {
+  border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), .04);
+  padding: 0;
+  margin: 0;
+}
+body > .menu-drawer .menu-view menu li {
+  list-style: none;
+}
+body > .menu-drawer .menu-view menu li a {
+  display: block;
+  color: hsla(var(--ppz-ccs-color-fore-base), .6);
+  transition: all var(--ani-duration);
+  padding: var(--padding);
+  text-decoration: none;
+}
+body > .menu-drawer .menu-view menu li a::before {
+  content: '>';
+  margin: 0 1em 0 0.15em;
+}
+body > .menu-drawer .menu-view menu li a:hover {
+  color: hsla(var(--ppz-ccs-color-fore-base), 1);
+  background: hsla(var(--ppz-ccs-color-fore-base), .04);
 }
 body > main {
   flex: 1;
