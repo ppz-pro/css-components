@@ -10,23 +10,23 @@
 }
 
 /* checked menu drawer */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :checked) {
+.ppz-ccs.menu-drawer:has(> :first-child input:checked) { /* 第一个子元素里“有一个 :checked”而非“直接子元素是 :checked”，保证了 menu-icon 可以多套几层 div，用于调整 icon 的位置 */
   width: var(--width);
 }
 /* unchecked menu drawer */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :not(:checked)) {
+.ppz-ccs.menu-drawer:has(> :first-child input:not(:checked)) {
   width: 0;
 }
 
 /* menu icon */
-.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child {
+.ppz-ccs.menu-drawer > :first-child {
   position: absolute;
   transition: transform var(--ppz-ccs-ani-duration);
   z-index: 1;
   left: 100%; /* 在外面 */
 }
 /* checked menu icon */
-.ppz-ccs.menu-drawer > .ppz-ccs.menu-icon:first-child:has(:checked) {
+.ppz-ccs.menu-drawer > :first-child:has(:checked) {
   transform: translateX(-100%); /* 左移一个身位 */
 }
 
@@ -40,7 +40,7 @@
   transform: translateX(-100%);
 }
 /* checked menu view */
-.ppz-ccs.menu-drawer:has(> .ppz-ccs.menu-icon:first-child > :checked) > .ppz-ccs.menu-view {
+.ppz-ccs.menu-drawer:has(> :first-child :checked) > .ppz-ccs.menu-view {
   opacity: 1;
   transform: translateX(0)
 }
