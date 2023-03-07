@@ -4,16 +4,13 @@
   --size: 1em;
   --line-width: 2px;
   --line-width-close: 1px;
-  --color: hsl(var(--ppz-ccs-color-fore-base), .6);
+  --color: currentColor;
 
   height: var(--size);
   width: var(--size);
   position: relative;
   visibility: hidden;
   overflow: hidden; /* 旋转后，形状变化 */
-}
-.ppz-ccs.menu-icon:hover {
-  --color: hsl(var(--ppz-ccs-color-fore-base), 1);
 }
 
 .ppz-ccs.menu-icon::before, .ppz-ccs.menu-icon::after {
@@ -51,7 +48,7 @@
   transform-origin: top center;
 }
 .ppz-ccs.menu-icon:checked::before {
-  transform: rotate(-45deg);
+  transform: translateX(calc(-1 * calc(var(--line-width-close)/ 2))) rotate(-45deg);
 }
 .ppz-ccs.menu-icon:checked::after {
   transform: rotate(45deg);
