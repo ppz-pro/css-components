@@ -1,34 +1,39 @@
-<!DOCTYPE html><html lang="en"><head><title>CCS Tutorial</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf8"><link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css"><style>html, body {
+<!DOCTYPE html><html lang="en"><head><title>CCS Tutorial</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf8"><link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css"><style>/* reset */
+html,
+body {
   padding: 0;
   margin: 0;
 }
 html {
   line-height: 1;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }
+/* ppz style */
 body {
   height: 100vh;
   display: flex;
 }
-.menu-icon-wrapper {
+body > .menu-drawer .menu-icon-wrapper {
   padding: 1em;
   cursor: pointer;
 }
-.ppz-ccs.menu-view {
+body > .menu-drawer .menu-view {
   padding: 1em;
   box-sizing: border-box;
-  background: hsla(var(--ppz-ccs-color-fore-base), .08);
+  background: hsla(var(--ppz-ccs-color-fore-base), .06);
 }
-.ppz-ccs.menu-view > h1 {
+body > .menu-drawer .menu-view h1 {
   font-size: inherit;
   font-weight: bold;
 }
-main {
+body > main {
   flex: 1;
-  background: green;
   height: 100%;
   overflow: auto;
-}</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1></div></div><main></main></body></html>
+}
+</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li></menu></div></div><main><div class="page" id="get-started"><div>getting started</div></div></main></body></html>

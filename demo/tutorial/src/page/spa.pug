@@ -5,41 +5,8 @@ html(lang = 'en')
     meta(name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     meta(charset = 'utf8')
     link(rel = 'stylesheet' href = 'https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css')
-    style.
-      html, body {
-        padding: 0;
-        margin: 0;
-      }
-      html {
-        line-height: 1;
-      }
-      h1, h2, h3 {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        height: 100vh;
-        display: flex;
-      }
-      .menu-icon-wrapper {
-        padding: 1em;
-        cursor: pointer;
-      }
-      .ppz-ccs.menu-view {
-        padding: 1em;
-        box-sizing: border-box;
-        background: hsla(var(--ppz-ccs-color-fore-base), .08);
-      }
-      .ppz-ccs.menu-view > h1 {
-        font-size: inherit;
-        font-weight: bold;
-      }
-      main {
-        flex: 1;
-        background: green;
-        height: 100%;
-        overflow: auto;
-      }
+    style !{style}
+
   body
     .ppz-ccs.menu-drawer
       label.menu-icon-wrapper
@@ -47,5 +14,10 @@ html(lang = 'en')
           input(type = 'checkbox' checked)
       .ppz-ccs.menu-view
         h1 CCS Tutorial
-        
+        menu
+          each page in pages
+            li
+              a(href = '#' + page.id)= page.config.name
     main
+      each page in pages
+        .page(id = page.id) !{page.html}

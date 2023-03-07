@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "tutorial": "coffee src/index.coffee -n"
+    "tutorial": "nodemon --ext coffee,pug,styl --exec coffee src/index.coffee -n"
   },
   "devDependencies": {
     "coffeescript": "^2.7.0",
-    "pug": "^3.0.2"
+    "nodemon": "^2.0.21",
+    "pug": "^3.0.2",
+    "stylus": "^0.59.0"
   }
 }

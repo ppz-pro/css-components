@@ -1,13 +1,19 @@
 require('coffeescript').register()
 
-Pug = require 'pug'
-Path = require 'path'
 FS = require 'fs'
+{ Pug, Stylus } = require './utils'
+getPages = require './get-pages'
 
-P = (relativePath) ->
-  Path.join(__dirname, relativePath)
+console.clear()
 
-result = Pug.renderFile(P('./page/spa.pug'))
+result = Pug('spa.pug', {
+  style: Stylus('index.styl')
+  pages: getPages()
+})
 
-FS.writeFileSync(P('../index.html'), result)
+FS.writeFileSync(
+  'index.html'
+  result
+)
+
 console.log('compiled', new Date())
