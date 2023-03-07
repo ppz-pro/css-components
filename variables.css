@@ -1,3 +1,4 @@
+/* 全局变量 */
 :root {
   --ppz-ccs-color-success-h: 122;
   --ppz-ccs-color-success-s: 45%;
@@ -21,6 +22,7 @@
   --ppz-ccs-ani-duration: .18s;
 }
 
+/* 暗模式下的全局变量 */
 @media (prefers-color-scheme: dark) {
   :root {  
     --ppz-ccs-color-fore-h: 0;

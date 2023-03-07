@@ -22,6 +22,7 @@
   transition: all var(--ppz-ccs-ani-duration);
 }
 
+/* 使用“::before 的上、下边”作为上线、下线 */
 .ppz-ccs.menu-icon1:not(:checked)::before {
   left: 0;
   top: 0;
@@ -32,19 +33,22 @@
   border-bottom: var(--line-width) solid var(--color); /* 上面一条线 */
   border-top: var(--line-width) solid var(--color); /* 下面一条线 */
 }
-.ppz-ccs.menu-icon1:not(:checked)::after { /* 中间一条线 */
+
+/* 中线 */
+.ppz-ccs.menu-icon1:not(:checked)::after {
   top: calc(50% - calc(var(--line-width) / 2));
   width: 100%;
   height: var(--line-width);
   background-color: var(--color);
 }
 
+/* checked 后，::before 和 ::after 各代表一条线 */
 .ppz-ccs.menu-icon1:checked::before, .ppz-ccs.menu-icon1:checked::after {
   bottom: 0;
   left: 0;
   width: 100%; /* 下半个正方形 */
   box-sizing: content-box;
-  height: calc(calc(var(--size) - var(--line-width-close)) / 2); /* 没有厚度时，点不到! */
+  height: calc(calc(var(--size) - var(--line-width-close)) / 2); /* !!!没有厚度时，点不到!!! 但目前，上四分之一还是点不到，这也是“不太好用的原因” */
   border-top: var(--line-width-close) var(--color) solid;
   transform-origin: top center;
 }
