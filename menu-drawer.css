@@ -1,5 +1,5 @@
-@import url('../base.css');
-@import url('../menu-icon/index.css');
+@import url('./base.css');
+@import url('./menu-icon.css');
 
 .ppz-ccs.menu-drawer {
   --width: 20em;
