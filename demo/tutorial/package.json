@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "tutorial": "coffee --watch src/index.coffee -n"
+    "tutorial": "coffee src/index.coffee -n"
   },
   "devDependencies": {
     "coffeescript": "^2.7.0",

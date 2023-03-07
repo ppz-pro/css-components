@@ -1,4 +1,34 @@
-<!DOCTYPE html><html lang="en"><head><title>CCS Tutorial</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf8"><link rel="stylesheet" href="https://raw.githubusercontent.com/ppz-pro/css-components/main/menu-drawer.css"><style>html, body {
+<!DOCTYPE html><html lang="en"><head><title>CCS Tutorial</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf8"><link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css"><style>html, body {
   padding: 0;
   margin: 0;
-}</style></head><body><div>CCS Tutorial</div></body></html>
+}
+html {
+  line-height: 1;
+}
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  display: flex;
+}
+.menu-icon-wrapper {
+  padding: 1em;
+  cursor: pointer;
+}
+.ppz-ccs.menu-view {
+  padding: 1em;
+  box-sizing: border-box;
+  background: hsla(var(--ppz-ccs-color-fore-base), .08);
+}
+.ppz-ccs.menu-view > h1 {
+  font-size: inherit;
+  font-weight: bold;
+}
+main {
+  flex: 1;
+  background: green;
+  height: 100%;
+  overflow: auto;
+}</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1></div></div><main></main></body></html>

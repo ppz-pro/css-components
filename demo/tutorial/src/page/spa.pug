@@ -4,11 +4,48 @@ html(lang = 'en')
     title CCS Tutorial
     meta(name = 'viewport' content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     meta(charset = 'utf8')
-    link(rel = 'stylesheet' href = 'https://raw.githubusercontent.com/ppz-pro/css-components/main/menu-drawer.css')
+    link(rel = 'stylesheet' href = 'https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css')
     style.
       html, body {
         padding: 0;
         margin: 0;
       }
+      html {
+        line-height: 1;
+      }
+      h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+      }
+      .menu-icon-wrapper {
+        padding: 1em;
+        cursor: pointer;
+      }
+      .ppz-ccs.menu-view {
+        padding: 1em;
+        box-sizing: border-box;
+        background: hsla(var(--ppz-ccs-color-fore-base), .08);
+      }
+      .ppz-ccs.menu-view > h1 {
+        font-size: inherit;
+        font-weight: bold;
+      }
+      main {
+        flex: 1;
+        background: green;
+        height: 100%;
+        overflow: auto;
+      }
   body
-    div CCS Tutorial
+    .ppz-ccs.menu-drawer
+      label.menu-icon-wrapper
+        label.ppz-ccs.menu-icon
+          input(type = 'checkbox' checked)
+      .ppz-ccs.menu-view
+        h1 CCS Tutorial
+        
+    main

@@ -34,6 +34,7 @@
 .ppz-ccs.menu-drawer > .ppz-ccs.menu-view {
   width: var(--width);
   height: 100%;
+  box-sizing: border-box;
   
   transition: all var(--ppz-ccs-ani-duration);
   opacity: 0;
