@@ -3,54 +3,61 @@
 .ppz-ccs.menu-icon {
   --size: 1em;
   --line-width: 2px;
-  --line-width-close: 1px;
+  --line-width-close: 1px; /* 变量写在这里，而非... */
   --color: currentColor;
+
+  --line-width-half: calc(var(--line-width) / 2);
 
   height: var(--size);
   width: var(--size);
   position: relative;
-  visibility: hidden;
-  border-radius: 0;
-  overflow: hidden; /* 旋转后，形状变化 */
+}
+.ppz-ccs.menu-icon:has(:checked) {
+  --line-width: var(--line-width-close); /* ...这里，是因为方便“使用者”写变量，而且 --line-width 相关联的变量，也能自动计算 */
 }
 
-.ppz-ccs.menu-icon::before, .ppz-ccs.menu-icon::after {
+.ppz-ccs.menu-icon > input {
+  visibility: hidden;
+}
+
+/* 三条线 */
+.ppz-ccs.menu-icon::before, .ppz-ccs.menu-icon::after, .ppz-ccs.menu-icon > input::before {
   content: '';
   display: block;
-  visibility: visible;
   position: absolute;
   transition: all var(--ppz-ccs-ani-duration);
-}
-
-.ppz-ccs.menu-icon:not(:checked)::before {
   left: 0;
-  top: 0;
-  box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-
-  border-bottom: var(--line-width) solid var(--color); /* 上面一条线 */
-  border-top: var(--line-width) solid var(--color); /* 下面一条线 */
-}
-.ppz-ccs.menu-icon:not(:checked)::after { /* 中间一条线 */
-  top: calc(50% - calc(var(--line-width) / 2));
   width: 100%;
   height: var(--line-width);
-  background-color: var(--color);
+  border-radius: var(--line-width-half);
+  background: var(--color);
+}
+/* 中线: input::before */
+.ppz-ccs.menu-icon > input::before {
+  visibility: visible;
+  top: calc(50% - var(--line-width-half));
 }
 
-.ppz-ccs.menu-icon:checked::before, .ppz-ccs.menu-icon:checked::after {
+/* 上线: unchecked label::before */
+.ppz-ccs.menu-icon:has(:not(:checked))::before {
+  top: 0;
+}
+/* 下线: unchecked label::after */
+.ppz-ccs.menu-icon:has(:not(:checked))::after {
   bottom: 0;
-  left: 0;
-  width: 100%; /* 下半个正方形 */
-  box-sizing: content-box;
-  height: calc(calc(var(--size) - var(--line-width-close)) / 2); /* 没有厚度时，点不到! */
-  border-top: var(--line-width-close) var(--color) solid;
-  transform-origin: top center;
 }
-.ppz-ccs.menu-icon:checked::before {
-  transform: translateX(calc(-1 * calc(var(--line-width-close)/ 2))) rotate(-45deg);
+
+/* 上线: checked label::before */
+.ppz-ccs.menu-icon:has(:checked)::before {
+  top: calc(50% - var(--line-width-half));
+  transform: rotate(-45deg);
 }
-.ppz-ccs.menu-icon:checked::after {
+/* 下线: checked label::after */
+.ppz-ccs.menu-icon:has(:checked)::after {
+  bottom: calc(50% - var(--line-width-half));
   transform: rotate(45deg);
+}
+/* 中线: checked input::before */
+.ppz-ccs.menu-icon > input:checked::before {
+  opacity: 0;
 }
