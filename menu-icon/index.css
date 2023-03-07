@@ -10,6 +10,7 @@
   width: var(--size);
   position: relative;
   visibility: hidden;
+  border-radius: 0;
   overflow: hidden; /* 旋转后，形状变化 */
 }
 
