@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "tutorial": "coffee --watch src/index.coffee -n"
+  },
+  "devDependencies": {
+    "coffeescript": "^2.7.0",
+    "pug": "^3.0.2"
+  }
+}
