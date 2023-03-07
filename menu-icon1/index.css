@@ -1,0 +1,56 @@
+@import url('../base.css');
+
+.ppz-ccs.menu-icon1 {
+  --size: 1em;
+  --line-width: 2px;
+  --line-width-close: 1px;
+  --color: currentColor;
+
+  height: var(--size);
+  width: var(--size);
+  position: relative;
+  visibility: hidden;
+  border-radius: 0;
+  overflow: hidden; /* 旋转后，形状变化 */
+}
+
+.ppz-ccs.menu-icon1::before, .ppz-ccs.menu-icon1::after {
+  content: '';
+  display: block;
+  visibility: visible;
+  position: absolute;
+  transition: all var(--ppz-ccs-ani-duration);
+}
+
+.ppz-ccs.menu-icon1:not(:checked)::before {
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+
+  border-bottom: var(--line-width) solid var(--color); /* 上面一条线 */
+  border-top: var(--line-width) solid var(--color); /* 下面一条线 */
+}
+.ppz-ccs.menu-icon1:not(:checked)::after { /* 中间一条线 */
+  top: calc(50% - calc(var(--line-width) / 2));
+  width: 100%;
+  height: var(--line-width);
+  background-color: var(--color);
+}
+
+.ppz-ccs.menu-icon1:checked::before, .ppz-ccs.menu-icon1:checked::after {
+  bottom: 0;
+  left: 0;
+  width: 100%; /* 下半个正方形 */
+  box-sizing: content-box;
+  height: calc(calc(var(--size) - var(--line-width-close)) / 2); /* 没有厚度时，点不到! */
+  border-top: var(--line-width-close) var(--color) solid;
+  transform-origin: top center;
+}
+.ppz-ccs.menu-icon1:checked::before {
+  transform: translateX(calc(-1 * calc(var(--line-width-close)/ 2))) rotate(-45deg);
+}
+.ppz-ccs.menu-icon1:checked::after {
+  transform: rotate(45deg);
+}
