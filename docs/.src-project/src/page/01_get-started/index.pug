@@ -1,4 +1,4 @@
-h2= config.name
+h2 CCS 使用介绍
 p css-components 是一个纯 css 的组件库，目前只有三个组件：
 ul
   li
@@ -14,12 +14,18 @@ p
   span 因为做这个库的主要原因是“好玩”。毕竟编程既是工作，也是生活，生活很枯燥，我得自己找乐子。
   span 当然，我的乐子不一定是你的乐子，所以这个库真的只属于我这种“少数人”。
 
-h3 安装
-h4 从 CDN 加载
-p
-  | 你可以从 
-  a(href=references.root) unpkg
-  |  加载组件，像这样：
+h4 使用 npm 安装
+pre
+  code npm install @ppzp/css-components
+
+p 然后，在你的代码里可以这样加载 switch 组件：
+pre
+  code import '@ppzp/css-components/switch.css'
+
+h4
+  | 或者，直接从 
+  a(href=references.root) CDN
+  |  加载，像这样：
 pre
   code= demos['load-from-cdn'].html
 .demo-wrapper
