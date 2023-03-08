@@ -12,7 +12,7 @@ result = Pug('spa.pug', {
 })
 
 FS.writeFileSync(
-  'index.html'
+  '../index.html'
   result
 )
 

@@ -19,12 +19,12 @@ module.exports = ->
         name = demo.slice(0, -4)
         html = Pug(dir.name + '/demo/' + demo)
         console.log 'writing', demo
-        htmlPath = 'tutorial-demo/' + name + '.html'
-        FS.writeFileSync(htmlPath, html)
+        htmlName = name + '.html'
+        FS.writeFileSync('../' + htmlName, html)
         result[name] = {
           html
           name
-          htmlPath
+          htmlName
         }
       return result
     

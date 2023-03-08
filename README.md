@@ -4,7 +4,6 @@
 
 无 JS，无 Webpack，仅 CSS
 
-+ [CSS Switch](https://ppz-pro.github.io/css-components/demo/switch)
-+ [CSS MenuIcon](https://ppz-pro.github.io/css-components/demo/menu-icon)
-+ 另一个值得看但不太好用的 [CSS MenuIcon](https://ppz-pro.github.io/css-components/demo/menu-icon1)
-+ [CSS MenuDrawer](https://ppz-pro.github.io/css-components/demo/menu-drawer)
++ [CSS Switch](https://ppz-pro.github.io/css-components/switch)
++ [CSS MenuIcon](https://ppz-pro.github.io/css-components/menu-icon)
++ [CSS MenuDrawer](https://ppz-pro.github.io/css-components/menu-drawer)
