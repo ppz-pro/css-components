@@ -1,4 +1,15 @@
 .page
+  // h2: 页面标题，一个页面只有一个
+  // h3: 页面内一级模块标题
+  // h4: 页面内二级模块标题
+  h2, h3, h4
+    margin-bottom: .8em
+  h3, h4
+    margin-top: 2em
+  h2 + h3, h3 + h4
+    margin-top: 0
+  h4
+    font-size: 1em
   p
     margin: 1em 0
     line-height: 1.5
@@ -27,3 +38,26 @@
         opacity: .7
       &:hover::before
         opacity: 1
+  pre
+    margin: 1em 0
+    background: "hsla(var(--ppz-ccs-color-fore-base), .02)" % 1
+    code
+      display: block
+      padding: 1em 2em
+      line-height: 1.5
+  .demo-wrapper
+    margin: 1em 0
+    width: 30em
+    max-width: 100%
+    .header
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 1em
+    iframe
+      width: 100%
+      margin: 0
+      height: 20em
+      outline: none
+      border: none
+      box-shadow: 0 0 1em "hsla(var(--ppz-ccs-color-fore-base), .1)" % 1

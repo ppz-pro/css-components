@@ -17,12 +17,19 @@ module.exports = ->
       for demo in demos
         console.log 'loading demo', demo
         name = demo.slice(0, -4)
-        result[name] = Pug(dir.name + '/demo/' + demo)
+        html = Pug(dir.name + '/demo/' + demo)
+        console.log 'writing', demo
+        htmlPath = 'tutorial-demo/' + name + '.html'
+        FS.writeFileSync(htmlPath, html)
+        result[name] = {
+          html
+          name
+          htmlPath
+        }
       return result
     
     {
       id
-      demos
-      html: Pug(dir.name + '/index.pug')
+      html: Pug(dir.name + '/index.pug', { demos })
       config: require('./page/' + dir.name + '/index.coffee')
     }

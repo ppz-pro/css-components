@@ -16,4 +16,12 @@ p
 
 h3 安装
 h4 从 CDN 加载
-p 你可以从 <a href='https://unpkg.com/browse/@ppzp/css-components@0.0.1/'>unpkg</a> 加载组件
+p 你可以从 <a href='https://unpkg.com/browse/@ppzp/css-components@0.0.1/'>unpkg</a> 加载组件，像这样：
+pre
+  code= demos['load-from-cdn'].html
+.demo-wrapper
+  - var demo = demos['load-from-cdn']
+  .header
+    label 效果：
+    a(href=demo.htmlPath download=demo.name) 下载源码
+  iframe(src=demo.htmlPath)
