@@ -21,4 +21,4 @@ html(lang = 'en')
               a(href = '#' + page.id)= page.config.name
     main
       each page in pages
-        .page(id = page.id) !{page.html}
+        .page(id = page.id) !{page.html()}

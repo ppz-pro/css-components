@@ -1,0 +1,14 @@
+block page
+
+.footer
+  -
+    var prev = pages[index - 1]
+    var next = pages[index + 1]
+  .prev
+    if prev
+      span 上一页：
+      a.link(href='#' + prev.id)= prev.config.name
+  .next
+    if next
+      span 下一页：
+      a.link(href='#' + next.id)= next.config.name

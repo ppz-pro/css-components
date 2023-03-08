@@ -3,7 +3,9 @@ FS = require 'fs'
 
 module.exports = ->
   dirs = FS.readdirSync('src/page', { withFileTypes: true })
-  for dir in dirs when dir.isDirectory()
+  pages = dirs
+  .filter (dir) -> dir.isDirectory()
+  .map (dir, index) ->
     console.log 'loading', dir.name
     id = dir.name.slice(3)
     # 加载 demos
@@ -29,8 +31,9 @@ module.exports = ->
       return result
     
     config = require('./page/' + dir.name + '/index.coffee')
-    {
+    return {
       id
       config
-      html: Pug(dir.name + '/index.pug', { demos, config })
+      html: -> Pug(dir.name + '/index.pug', { demos, config, pages, index }) # ... mess code
     }
+  return pages

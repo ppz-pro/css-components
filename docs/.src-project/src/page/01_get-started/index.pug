@@ -1,36 +1,39 @@
-h2 CCS 使用介绍
-p css-components 是一个纯 css 的组件库，目前只有三个组件：
-ul
-  li
-    a(href='#switch') switch
-  li
-    a(href='#menu-icon') menu-icon
-  li
-    a(href='#menu-drawer') menu-drawer
+extends ../page-layout.pug
 
-p
-  span 强调“纯 css”，小部分原因是“没有 js 的介入，逻辑将变得相当简单，js 就能更加关注业务”。
-  span 但不得不说，这个库只适合“少数人”。而“少数人”在中文里，并不是个好词，这里就是那个意思。
-  span 因为做这个库的主要原因是“好玩”。毕竟编程既是工作，也是生活，生活很枯燥，我得自己找乐子。
-  span 当然，我的乐子不一定是你的乐子，所以这个库真的只属于我这种“少数人”。
+block page
+  h2 CCS 使用介绍
+  p css-components 是一个纯 css 的组件库，目前只有三个组件：
+  ul
+    li
+      a.link(href='#switch') switch
+    li
+      a.link(href='#menu-icon') menu-icon
+    li
+      a.link(href='#menu-drawer') menu-drawer
 
-h4 使用 npm 安装
-pre
-  code npm install @ppzp/css-components
+  p
+    span 强调“纯 css”，小部分原因是“没有 js 的介入，逻辑将变得相当简单，js 就能更加关注业务”。
+    span 但不得不说，这个库只适合“少数人”。而“少数人”在中文里，并不是个好词，这里就是那个意思。
+    span 因为做这个库的主要原因是“好玩”。毕竟编程既是工作，也是生活，生活很枯燥，我得自己找乐子。
+    span 当然，我的乐子不一定是你的乐子，所以这个库真的只属于我这种“少数人”。
 
-p 然后，在你的代码里可以这样加载 switch 组件：
-pre
-  code import '@ppzp/css-components/switch.css'
+  h4 使用 npm 安装
+  pre
+    code npm install @ppzp/css-components
 
-h4
-  | 或者，直接从 
-  a(href=references.root) CDN
-  |  加载，像这样：
-pre
-  code= demos['load-from-cdn'].html
-.demo-wrapper
-  - var demo = demos['load-from-cdn']
-  .header
-    label 效果：
-    a(href=demo.htmlName download=demo.name) 下载源码
-  iframe(src=demo.htmlName)
+  p 然后，在你的代码里可以这样加载 switch 组件：
+  pre
+    code import '@ppzp/css-components/switch.css'
+
+  h4
+    | 或者，直接从 
+    a.link(href=references.root) CDN
+    |  加载，像这样：
+  pre
+    code= demos['load-from-cdn'].html
+  .demo-wrapper
+    - var demo = demos['load-from-cdn']
+    .header
+      label 效果：
+      a.link(href=demo.htmlName download=demo.name) 下载源码
+    iframe(src=demo.htmlName)
