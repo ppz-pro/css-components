@@ -28,8 +28,9 @@ module.exports = ->
         }
       return result
     
+    config = require('./page/' + dir.name + '/index.coffee')
     {
       id
-      html: Pug(dir.name + '/index.pug', { demos })
-      config: require('./page/' + dir.name + '/index.coffee')
+      config
+      html: Pug(dir.name + '/index.pug', { demos, config })
     }
