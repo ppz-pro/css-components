@@ -1,0 +1,29 @@
+.page
+  p
+    margin: 1em 0
+    line-height: 1.5
+    span
+      display: block
+  a
+    color: "hsl(211, 97%, 54%)" % 1
+    text-decoration: none
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style: none
+      padding-left: .5em
+      display: flex
+      align-items: center
+      line-height: 1.5
+      &::before
+        content: ''
+        display: inline-block
+        margin-right: .5em
+        width: .4em
+        height: .4em
+        border-radius: 50%
+        background: var(--ppz-ccs-color-fore)
+        opacity: .7
+      &:hover::before
+        opacity: 1

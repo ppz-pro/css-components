@@ -1,4 +1,11 @@
-<!DOCTYPE html><html lang="en"><head><title>CCS Tutorial</title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta charset="utf8"><link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css"><style>/* reset */
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CCS Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="utf8">
+    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.1/menu-drawer/index.css">
+    <style>/* reset */
 html,
 body {
   padding: 0;
@@ -9,7 +16,8 @@ html {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -67,7 +75,7 @@ body > main {
   max-height: 100%;
   box-sizing: border-box;
   overflow: auto;
-  padding: 2em 5em;
+  padding: 3em 5em;
 }
 body > main .page {
   display: none;
@@ -78,4 +86,79 @@ body > main .page:target {
 body > main:not(:has(.page:target)) .page:first-child {
   display: block;
 }
-</style></head><body><div class="ppz-ccs menu-drawer"><label class="menu-icon-wrapper"><label class="ppz-ccs menu-icon"><input type="checkbox" checked></label></label><div class="ppz-ccs menu-view"><h1>CCS Tutorial</h1><menu><li><a href="#get-started">起步</a></li><li><a href="#switch">switch</a></li><li><a href="#menu-icon">menu-icon</a></li><li><a href="#menu-drawer">menu-drawer</a></li></menu></div></div><main><div class="page" id="get-started"><h2>getting started</h2></div><div class="page" id="switch"><h2>switch</h2></div><div class="page" id="menu-icon"><h2>menu icon</h2></div><div class="page" id="menu-drawer"><h2>menu-drawer</h2></div></main></body></html>
+.page p {
+  margin: 1em 0;
+  line-height: 1.5;
+}
+.page p span {
+  display: block;
+}
+.page a {
+  color: hsl(211, 97%, 54%);
+  text-decoration: none;
+}
+.page ul {
+  padding: 0;
+  margin: 0;
+}
+.page ul li {
+  list-style: none;
+  padding-left: 0.5em;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+.page ul li::before {
+  content: '';
+  display: inline-block;
+  margin-right: 0.5em;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: var(--ppz-ccs-color-fore);
+  opacity: 0.7;
+}
+.page ul li:hover::before {
+  opacity: 1;
+}
+</style>
+  </head>
+  <body>
+    <div class="ppz-ccs menu-drawer">
+      <label class="menu-icon-wrapper">
+        <label class="ppz-ccs menu-icon">
+          <input type="checkbox" checked>
+        </label>
+      </label>
+      <div class="ppz-ccs menu-view">
+        <h1>CCS Tutorial</h1>
+        <menu>
+          <li><a href="#get-started">起步</a></li>
+          <li><a href="#switch">switch</a></li>
+          <li><a href="#menu-icon">menu-icon</a></li>
+          <li><a href="#menu-drawer">menu-drawer</a></li>
+        </menu>
+      </div>
+    </div>
+    <main>
+      <div class="page" id="get-started">
+<h2>起步</h2>
+<p>css-components 是一个纯 css 的组件库，目前只有三个组件：</p>
+<ul>
+  <li><a href="#switch">switch</a></li>
+  <li><a href="#menu-icon">menu-icon</a></li>
+  <li><a href="#menu-drawer">menu-drawer</a></li>
+</ul>
+<p><span>强调“纯 css”，小部分原因是“没有 js 的介入，逻辑将变得相当简单，js 就能更加关注业务”。</span><span>但不得不说，这个库只适合“少数人”。而“少数人”在中文里，并不是个好词，这里就是那个意思。</span><span>因为做这个库的主要原因是“好玩”。毕竟编程既是工作，也是生活，生活很枯燥，我得自己找乐子。</span><span>当然，我的乐子不一定是你的乐子，所以这个库真的只属于我这种“少数人”。</span></p>
+<h3>安装</h3>
+<h4>从 CDN 加载</h4>
+<p>你可以从 <a href='https://unpkg.com/browse/@ppzp/css-components@0.0.1/'>unpkg</a> 加载组件</p></div>
+      <div class="page" id="switch">
+<h2>switch</h2></div>
+      <div class="page" id="menu-icon">
+<h2>menu icon</h2></div>
+      <div class="page" id="menu-drawer">
+<h2>menu-drawer</h2></div>
+    </main>
+  </body>
+</html>

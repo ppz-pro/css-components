@@ -7,7 +7,7 @@ getPages = require './get-pages'
 console.clear()
 
 result = Pug('spa.pug', {
-  style: Stylus('index.styl')
+  style: Stylus('index.styl') + Stylus('page.styl')
   pages: getPages()
 })
 
