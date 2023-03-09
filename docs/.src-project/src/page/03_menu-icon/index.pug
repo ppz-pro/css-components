@@ -19,5 +19,21 @@ block page
   .demo-wrapper
     .header
       label 效果：
-      a.link(href=basicDemo.htmlName download=basicDemo.name) 下载源码
+      a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
     iframe(src=basicDemo.htmlName)
+
+  - var bigAndSlow = demos['-big-and-slow']
+  h3 慢一点，大一点
+  p
+    | 传入“参数”
+    code.inline height
+    | 和
+    code.inline ani-duration
+  p 完整代码：
+  pre
+    code= bigAndSlow.html
+  .demo-wrapper
+    .header
+      label 效果：
+      a.link(href=bigAndSlow.htmlName download=bigAndSlow.fullName) 下载源码
+    iframe(src=bigAndSlow.htmlName)
