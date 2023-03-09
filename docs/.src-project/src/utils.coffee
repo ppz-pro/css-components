@@ -11,6 +11,7 @@ references = do ->
     switch: tmpl 'switch'
     menuIcon: tmpl 'menu-icon'
     menuDrawer: tmpl 'menu-drawer'
+    dark: tmpl 'dark'
   }
 
 exports.Pug = (path, options) ->
