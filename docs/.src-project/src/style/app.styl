@@ -13,14 +13,25 @@ h1, h2, h3, h4
 
 /* ppz style */
 body
-  height: 100vh
-  display: flex
+  +pc()
+    height: 100vh
+    display: flex
   & > .ppz-ccs.menu-drawer
     --width: Size(16) !important
     +mobile()
-      position: absolute
-      background: ColorBack(.9)
+      position: fixed
       z-index: 10
+      height: 100%
+      box-shadow: 0 0 $size ColorFore(.05)
+      &::after
+        content: ''
+        display: block
+        position: absolute
+        inset: 0
+        z-index: -1
+        background: ColorBack(.9)
+        filter: blur()
+
     .menu-icon-wrapper
       padding: $size
       cursor: pointer

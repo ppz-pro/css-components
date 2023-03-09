@@ -21,18 +21,30 @@ h4 {
   margin: 0;
   padding: 0;
 }
-body {
-  height: 100vh;
-  display: flex;
+@media (min-width: 500px) {
+  body {
+    height: 100vh;
+    display: flex;
+  }
 }
 body > .ppz-ccs.menu-drawer {
   --width: calc(var(--ppz-ccs-font-size) * 16) !important;
 }
 @media (max-width: 500px) {
   body > .ppz-ccs.menu-drawer {
-    position: absolute;
-    background: hsla(var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l), 0.9);
+    position: fixed;
     z-index: 10;
+    height: 100%;
+    box-shadow: 0 0 var(--ppz-ccs-font-size) hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.05);
+  }
+  body > .ppz-ccs.menu-drawer::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: hsla(var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l), 0.9);
+    filter: blur();
   }
 }
 body > .ppz-ccs.menu-drawer .menu-icon-wrapper {
