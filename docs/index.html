@@ -25,40 +25,54 @@ body {
   height: 100vh;
   display: flex;
 }
-body > .menu-drawer {
+body > .ppz-ccs.menu-drawer {
   --width: calc(var(--ppz-ccs-font-size) * 16) !important;
 }
-body > .menu-drawer .menu-icon-wrapper {
+@media (max-width: 500px) {
+  body > .ppz-ccs.menu-drawer {
+    position: absolute;
+    background: hsla(var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l), 0.9);
+    z-index: 10;
+  }
+}
+body > .ppz-ccs.menu-drawer .menu-icon-wrapper {
   padding: var(--ppz-ccs-font-size);
   cursor: pointer;
   opacity: 0.6;
+  background: hsla(var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l), 1);
+  border-radius: 50%;
 }
-body > .menu-drawer .menu-icon-wrapper:hover {
+@media (max-width: 500px) {
+  body > .ppz-ccs.menu-drawer .menu-icon-wrapper {
+    opacity: 0.8;
+  }
+}
+body > .ppz-ccs.menu-drawer .menu-icon-wrapper:hover {
   opacity: 1;
 }
-body > .menu-drawer .menu-view {
+body > .ppz-ccs.menu-drawer .menu-view {
   --padding: var(--ppz-ccs-font-size);
   background: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.01);
   box-sizing: border-box;
 }
-body > .menu-drawer .menu-view h1 {
+body > .ppz-ccs.menu-drawer .menu-view h1 {
   padding: var(--padding);
   font-size: var(--ppz-ccs-font-size);
   font-weight: bold;
 }
-body > .menu-drawer .menu-view h1 a {
+body > .ppz-ccs.menu-drawer .menu-view h1 a {
   color: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 1);
   text-decoration: none;
 }
-body > .menu-drawer .menu-view menu {
+body > .ppz-ccs.menu-drawer .menu-view menu {
   padding: 0;
   margin: 0;
   border-top: 1px solid hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.04);
 }
-body > .menu-drawer .menu-view menu li {
+body > .ppz-ccs.menu-drawer .menu-view menu li {
   list-style: none;
 }
-body > .menu-drawer .menu-view menu li a {
+body > .ppz-ccs.menu-drawer .menu-view menu li a {
   display: block;
   color: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.6);
   transition: all var(--ani-duration);
@@ -66,15 +80,15 @@ body > .menu-drawer .menu-view menu li a {
   text-decoration: none;
 }
 @media (prefers-color-scheme: dark) {
-  body > .menu-drawer .menu-view menu li a {
+  body > .ppz-ccs.menu-drawer .menu-view menu li a {
     color: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.8);
   }
 }
-body > .menu-drawer .menu-view menu li a::before {
+body > .ppz-ccs.menu-drawer .menu-view menu li a::before {
   content: '>';
   margin: 0 var(--ppz-ccs-font-size) 0 calc(var(--ppz-ccs-font-size) * 0.15);
 }
-body > .menu-drawer .menu-view menu li a:hover {
+body > .ppz-ccs.menu-drawer .menu-view menu li a:hover {
   color: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 1);
   background: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.04);
 }
@@ -89,6 +103,12 @@ body > main {
   box-sizing: border-box;
   overflow: auto;
   padding: 0 calc(var(--ppz-ccs-font-size) * 3) calc(var(--ppz-ccs-font-size) * 5);
+}
+@media (max-width: 500px) {
+  body > main {
+    padding-left: calc(var(--ppz-ccs-font-size) * 1);
+    padding-right: calc(var(--ppz-ccs-font-size) * 1);
+  }
 }
 body > main .page {
   max-width: 800px;
@@ -141,9 +161,13 @@ body > main:not(:has(.page:target)) .page:first-child {
 .page ul li {
   list-style: none;
   padding-left: calc(var(--ppz-ccs-font-size) * 0.5);
-  display: flex;
-  align-items: flex-start;
   line-height: calc(var(--ppz-ccs-font-size) * 2);
+}
+@media (min-width: 500px) {
+  .page ul li {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 .page ul li::before {
   content: '';
@@ -178,9 +202,16 @@ body > main:not(:has(.page:target)) .page:first-child {
   padding-top: calc(var(--ppz-ccs-font-size) * 0.25) !important;
   padding-bottom: calc(var(--ppz-ccs-font-size) * 0.25) !important;
 }
+@media (max-width: 500px) {
+  .page li code {
+    display: block;
+  }
+}
 .page pre {
   background: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.02);
-  margin: calc(var(--ppz-ccs-font-size) * 0.8) 0;
+  margin: calc(var(--ppz-ccs-font-size) * 0.6) 0;
+  max-width: 100%;
+  overflow: auto;
 }
 .page pre code {
   display: block;

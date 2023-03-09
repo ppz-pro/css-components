@@ -15,12 +15,20 @@ h1, h2, h3, h4
 body
   height: 100vh
   display: flex
-  & > .menu-drawer
+  & > .ppz-ccs.menu-drawer
     --width: Size(16) !important
+    +mobile()
+      position: absolute
+      background: ColorBack(.9)
+      z-index: 10
     .menu-icon-wrapper
       padding: $size
       cursor: pointer
       opacity: .6
+      background: ColorBack(1)
+      border-radius: 50%
+      +mobile()
+        opacity: .8
       &:hover
         opacity: 1
     
@@ -69,6 +77,10 @@ body
     overflow: auto
     padding: 0 Size(3) Size(5)
     // css router
+    
+    +mobile()
+      padding-left: Size(1)
+      padding-right: Size(1)
     .page
       max-width: 800px
       margin: 0 auto
