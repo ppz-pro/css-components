@@ -3,10 +3,13 @@ extends ../page-layout.pug
 block page
   h2 CCS 原理
   p
-    | css-components 和你正在看的这个网页，都没有半句 js。
+    | css-components 和你正在看的
+    a.link(href='./' download='ccs-tutorial') 这个网页
+    | 都没有半句 js。
     | 如果说 css-components 这个库，不使用 js 是为了防止 ui 逻辑入侵业务逻辑，
     | 那么这个网页不使用 js 则纯属一种实验：验证一下不用 js 能做出什么效果。
     | 我的结论是：没有 js 绝对不行；但是，仅 css 和 html 也可以做出有趣的东西。
+  p （这个网站虽然没有直接使用 js，但使用了 Nodejs 进行辅助处理）
   p 这里分享一下这个项目给我的经验。
 
   h3 数据存在哪？

@@ -7,6 +7,12 @@ block head
     .ppz-ccs.menu-icon {
       --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
       --ani-duration: 2s; /* 所有动画在 2 秒内完成 */
+      --line-width: 10px; /* 线条粗细与整体尺寸解耦，这是故意的（九转大肠骄傲脸） */
+      color: #482ff7; /* 这里使用 css 属性设置颜色，而不使用变量，是为了继承外层元素的颜色 */
+    }
+    .ppz-ccs.menu-icon:has(:checked) { /* 选中状态的线条粗细 */
+      --line-width: 20px;
+      color: #fc5c9c;
     }
 block body
   label.ppz-ccs.menu-icon

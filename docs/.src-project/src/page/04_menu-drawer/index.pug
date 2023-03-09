@@ -12,8 +12,8 @@ block page
       | 一些 html:
       code.inline= config.code.basic
   
-  p 完整代码：
-  -var basicDemo = demos['']
+  p 最简用法：
+  - var basicDemo = demos['']
   pre
     code= basicDemo.html
   .demo-wrapper
@@ -21,3 +21,13 @@ block page
       label 效果：
       a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
     iframe(src=basicDemo.htmlName)
+
+  h3 来点参数
+  - var paramsDemo = demos['-params']
+  pre
+    code= paramsDemo.html
+  .demo-wrapper
+    .header
+      label 效果:
+      a.link(href=paramsDemo.htmlName download=paramsDemo.fullName) 下载源码
+    iframe(src=paramsDemo.htmlName)

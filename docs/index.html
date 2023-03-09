@@ -220,13 +220,14 @@ body > main:not(:has(.page:target)) .page:first-child {
           <li><a href="#switch">.switch</a></li>
           <li><a href="#menu-icon">.menu-icon</a></li>
           <li><a href="#menu-drawer">.menu-drawer</a></li>
+          <li><a href="#全局参数">其他配置</a></li>
           <li><a href="#原理">原理</a></li>
         </menu>
       </div>
     </div>
     <main>
       <div class="page" id="get-started">
-<h2>CCS 使用介绍</h2>
+<h2>CCS 使用介绍</h2><a href="https://github.com/ppz-pro/css-components/blob/main/LICENSE"><img title="license" src="https://img.shields.io/github/license/ppz-pro/css-components"/></a><span> </span><a href="https://github.com/ppz-pro/css-components/releases"><img title="license" src="https://img.shields.io/github/release/ppz-pro/css-components"/></a>
 <p>css-components 是一个纯 css 的组件库，目前只有三个组件：</p>
 <ul>
   <li><a class="link" href="#switch">switch</a></li>
@@ -275,7 +276,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../switch.css&quot;&gt;</code></li>
   <li>一个元素:<code class="inline">&lt;input class=&quot;ppz-ccs switch&quot; type=&quot;checkbox&quot;&gt;</code></li>
 </ul>
-<p>完整代码：</p>
+<p>最简用法：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -296,7 +297,6 @@ body > main:not(:has(.page:target)) .page:first-child {
 </div>
 <h3>慢一点，大一点</h3>
 <p>传入“参数”<code class="inline">font-size</code>和<code class="inline">ani-duration</code></p>
-<p>完整代码：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -336,7 +336,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   &lt;input type=&quot;checkbox&quot;&gt;
 &lt;/label&gt;</code></li>
 </ul>
-<p>完整代码：</p>
+<p>最简用法：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -359,7 +359,6 @@ body > main:not(:has(.page:target)) .page:first-child {
 </div>
 <h3>慢一点，大一点</h3>
 <p>传入“参数”<code class="inline">font-size</code>和<code class="inline">ani-duration</code></p>
-<p>完整代码：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -371,6 +370,12 @@ body > main:not(:has(.page:target)) .page:first-child {
       .ppz-ccs.menu-icon {
         --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
         --ani-duration: 2s; /* 所有动画在 2 秒内完成 */
+        --line-width: 10px; /* 线条粗细与整体尺寸解耦，这是故意的（九转大肠骄傲脸） */
+        color: #482ff7; /* 这里使用 css 属性设置颜色，而不使用变量，是为了继承外层元素的颜色 */
+      }
+      .ppz-ccs.menu-icon:has(:checked) { /* 选中状态的线条粗细 */
+        --line-width: 20px;
+        color: #fc5c9c;
       }
     &lt;/style&gt;
   &lt;/head&gt;
@@ -404,7 +409,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   &lt;div class=&quot;ppz-ccs menu-view&quot;&gt;菜单内容区&lt;/div&gt;
 &lt;/div&gt;</code></li>
 </ul>
-<p>完整代码：</p>
+<p>最简用法：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
@@ -428,20 +433,72 @@ body > main:not(:has(.page:target)) .page:first-child {
   </div>
   <iframe src="menu-drawer.html"></iframe>
 </div>
+<h3>来点参数</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta charset=&quot;utf8&quot;&gt;
+    &lt;title&gt;CCS .menu-drawer&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.4-alpha/menu-drawer.css&quot;&gt;
+    &lt;style&gt;
+      body {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+      }
+      .menu-view {
+        background: #f6f6f6;
+      }
+      main {
+        padding: 2em 3em;
+      }
+      
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;ppz-ccs menu-drawer&quot;&gt;
+      &lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;
+      &lt;/label&gt;
+      &lt;div class=&quot;ppz-ccs menu-view&quot;&gt;菜单内容区&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;main&gt;正文内容区&lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<div class="demo-wrapper">
+  <div class="header">
+    <label>效果:</label><a class="link" href="menu-drawer-params.html" download="menu-drawer-params">下载源码</a>
+  </div>
+  <iframe src="menu-drawer-params.html"></iframe>
+</div>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#menu-icon">menu-icon</a>
+  </div>
+  <div class="next"><span>下一页：</span><a class="link" href="#全局参数">其他配置</a>
+  </div>
+</div></div>
+      <div class="page" id="全局参数">
+<h2>CCS 其他配置</h2>
+<h3>全局参数</h3>
+<p>TODO</p>
+<h4>暗模式</h4>
+<p>TODO</p>
+<div class="footer">
+  <div class="prev"><span>上一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
   </div>
   <div class="next"><span>下一页：</span><a class="link" href="#原理">原理</a>
   </div>
 </div></div>
       <div class="page" id="原理">
 <h2>CCS 原理</h2>
-<p>
-  css-components 和你正在看的这个网页，都没有半句 js。
+<p>css-components 和你正在看的<a class="link" href="./" download="ccs-tutorial">这个网页</a>都没有半句 js。
   如果说 css-components 这个库，不使用 js 是为了防止 ui 逻辑入侵业务逻辑，
   那么这个网页不使用 js 则纯属一种实验：验证一下不用 js 能做出什么效果。
   我的结论是：没有 js 绝对不行；但是，仅 css 和 html 也可以做出有趣的东西。
 </p>
+<p>（这个网站虽然没有直接使用 js，但使用了 Nodejs 进行辅助处理）</p>
 <p>这里分享一下这个项目给我的经验。</p>
 <h3>数据存在哪？</h3>
 <p>
@@ -479,7 +536,7 @@ body > main:not(:has(.page:target)) .page:first-child {
 <pre><code>[type=checkbox] + div {
   width: 0;
 }
-[type=checkbox]:checked +div {
+[type=checkbox]:checked + div {
   width: 100px;
 }</code></pre>
 <p>
@@ -504,7 +561,7 @@ body > main:not(:has(.page:target)) .page:first-child {
 }</code></pre>
 <p>：系统切换成暗模式时，所有 div 的 color 设为 green。</p>
 <div class="footer">
-  <div class="prev"><span>上一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
+  <div class="prev"><span>上一页：</span><a class="link" href="#全局参数">其他配置</a>
   </div>
   <div class="next">
   </div>

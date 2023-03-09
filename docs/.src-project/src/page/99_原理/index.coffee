@@ -5,7 +5,7 @@ module.exports =
           [type=checkbox] + div {
             width: 0;
           }
-          [type=checkbox]:checked +div {
+          [type=checkbox]:checked + div {
             width: 100px;
           }
           """
