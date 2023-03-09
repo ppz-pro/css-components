@@ -1,4 +1,4 @@
-/* 全局变量 */
+/* 向全局插入 ppz 变量 => 允许用户获取、设置 ppz 变量 */
 :root {
   /* 前景色 */
   --ppz-ccs-color-back-h: 0;
@@ -13,6 +13,9 @@
   --ppz-ccs-color-success-s: 45%;
   --ppz-ccs-color-success-l: 58%;
   /* 链接色 */
+  --ppz-ccs-color-link-h: 211;
+  --ppz-ccs-color-link-s: 97%;
+  --ppz-ccs-color-link-l: 54%;
   /* TODO */
 
   /* 尺寸 */
@@ -40,6 +43,12 @@
   --color-success-l: var(--ppz-ccs-color-success-l);
   --color-success-base: var(--color-success-h), var(--color-success-s), var(--color-success-l);
   --color-success: hsl(var(--color-success-base));
+
+  --color-link-h: var(--ppz-ccs-color-link-h);
+  --color-link-s: var(--ppz-ccs-color-link-s);
+  --color-link-l: var(--ppz-ccs-color-link-l);
+  --color-link-base: var(--color-link-h), var(--color-link-s), var(--color-link-l);
+  --color-link: hsl(var(--color-link-base));
   
   --color-back-h: var(--ppz-ccs-color-back-h);
   --color-back-s: var(--ppz-ccs-color-back-s);
