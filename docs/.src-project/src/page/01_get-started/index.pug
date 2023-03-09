@@ -29,11 +29,11 @@ block page
     | 或者，直接从 
     a.link(href=references.root) CDN
     |  加载，像这样：
+  - var demo = demos['-load-from-cdn']
   pre
-    code= demos['load-from-cdn'].html
+    code= demo.html
   .demo-wrapper
-    - var demo = demos['load-from-cdn']
     .header
       label 效果：
-      a.link(href=demo.htmlName download=demo.name) 下载源码
+      a.link(href=demo.htmlName download=demo.fullName) 下载源码
     iframe(src=demo.htmlName)

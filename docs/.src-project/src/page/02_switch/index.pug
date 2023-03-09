@@ -11,11 +11,12 @@ block page
       | 一个元素:
       code.inline= '<input class="ppz-ccs switch" type="checkbox">'
 
+  -var basicDemo = demos['']
   p 完整代码：
   pre
-    code= demos.switch.html
+    code= basicDemo.html
   .demo-wrapper
     .header
       label 效果：
-      a.link(href=demos.switch.htmlName download=demos.switch.name) 下载源码
-    iframe(src=demos.switch.htmlName)
+      a.link(href=basicDemo.htmlName download=basicDemo.name) 下载源码
+    iframe(src=basicDemo.htmlName)
