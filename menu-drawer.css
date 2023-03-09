@@ -2,10 +2,10 @@
 @import url('./menu-icon.css');
 
 .ppz-ccs.menu-drawer {
-  --width: 20em;
+  --width: calc(20 * var(--font-size));
 
   height: 100%;
-  transition: width var(--ppz-ccs-ani-duration);
+  transition: width var(--ani-duration);
   position: relative;
 }
 
@@ -21,7 +21,7 @@
 /* menu icon */
 .ppz-ccs.menu-drawer > :first-child {
   position: absolute;
-  transition: transform var(--ppz-ccs-ani-duration);
+  transition: transform var(--ani-duration);
   z-index: 1;
   left: 100%; /* 在外面 */
 }
@@ -36,7 +36,7 @@
   height: 100%;
   box-sizing: border-box;
   
-  transition: all var(--ppz-ccs-ani-duration);
+  transition: all var(--ani-duration);
   opacity: 0;
   transform: translateX(-100%);
 }

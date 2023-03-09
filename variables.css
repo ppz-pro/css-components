@@ -1,42 +1,58 @@
 /* 全局变量 */
 :root {
-  --ppz-ccs-color-success-h: 122;
-  --ppz-ccs-color-success-s: 45%;
-  --ppz-ccs-color-success-l: 58%;
-  --ppz-ccs-color-success-base: var(--ppz-ccs-color-success-h), var(--ppz-ccs-color-success-s), var(--ppz-ccs-color-success-l);
-  --ppz-ccs-color-success: hsl(var(--ppz-ccs-color-success-base));
-  
+  /* 前景色 */
   --ppz-ccs-color-back-h: 0;
   --ppz-ccs-color-back-s: 0%;
   --ppz-ccs-color-back-l: 100%;
-  --ppz-ccs-color-back-base: var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l);
-  --ppz-ccs-color-back: hsl(var(--ppz-ccs-color-back-base));
-
+  /* 背景色 */
   --ppz-ccs-color-fore-h: 0;
   --ppz-ccs-color-fore-s: 0%;
   --ppz-ccs-color-fore-l: 0%;
-  --ppz-ccs-color-fore-base: var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l);
-  --ppz-ccs-color-fore: hsl(var(--ppz-ccs-color-fore-base));
+  /* 成功色 */
+  --ppz-ccs-color-success-h: 122;
+  --ppz-ccs-color-success-s: 45%;
+  --ppz-ccs-color-success-l: 58%;
+  /* 链接色 */
+  /* TODO */
 
-  --ppz-ccs-color-ratio: 1;
+  /* 尺寸 */
+  --ppz-ccs-font-size: 16px;
+  /* 时间 */
   --ppz-ccs-ani-duration: .18s;
 }
-
 /* 暗模式下的全局变量 */
 @media (prefers-color-scheme: dark) {
   :root {  
     --ppz-ccs-color-fore-h: 0;
     --ppz-ccs-color-fore-s: 0%;
     --ppz-ccs-color-fore-l: 100%;
-    --ppz-ccs-color-fore-base: var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l);
-    --ppz-ccs-color-fore: hsl(var(--ppz-ccs-color-fore-base));
     
     --ppz-ccs-color-back-h: 0;
     --ppz-ccs-color-back-s: 0%;
     --ppz-ccs-color-back-l: 0%;
-    --ppz-ccs-color-back-base: var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l);
-    --ppz-ccs-color-back: hsl(var(--ppz-ccs-color-back-base));
-
-    --ppz-ccs-color-ratio: 2;
   }
+}
+
+/* ppz 变量 */
+.ppz-ccs {
+  --color-success-h: var(--ppz-ccs-color-success-h);
+  --color-success-s: var(--ppz-ccs-color-success-s);
+  --color-success-l: var(--ppz-ccs-color-success-l);
+  --color-success-base: var(--color-success-h), var(--color-success-s), var(--color-success-l);
+  --color-success: hsl(var(--color-success-base));
+  
+  --color-back-h: var(--ppz-ccs-color-back-h);
+  --color-back-s: var(--ppz-ccs-color-back-s);
+  --color-back-l: var(--ppz-ccs-color-back-l);
+  --color-back-base: var(--color-back-h), var(--color-back-s), var(--color-back-l);
+  --color-back: hsl(var(--color-back-base));
+
+  --color-fore-h: var(--ppz-ccs-color-fore-h);
+  --color-fore-s: var(--ppz-ccs-color-fore-s);
+  --color-fore-l: var(--ppz-ccs-color-fore-l);
+  --color-fore-base: var(--color-fore-h), var(--color-fore-s), var(--color-fore-l);
+  --color-fore: hsl(var(--color-fore-base));
+
+  --font-size: var(--ppz-ccs-font-size);
+  --ani-duration: var(--ppz-ccs-ani-duration);
 }

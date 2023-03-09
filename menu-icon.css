@@ -1,7 +1,7 @@
 @import url('./base.css');
 
 .ppz-ccs.menu-icon {
-  --size: 1em;
+  --size: var(--font-size);
   --line-width: 2px;
   --line-width-close: 1px; /* 变量写在这里，而非... */
   --color: currentColor;
@@ -26,7 +26,7 @@
   content: '';
   display: block;
   position: absolute;
-  transition: all var(--ppz-ccs-ani-duration);
+  transition: all var(--ani-duration);
   left: 0;
   width: 100%;
   height: var(--line-width);

@@ -28,7 +28,7 @@ code.inline {
 }
 
 code {
-  background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+  background: hsla(var(--color-fore-base), .02);
 }
 /* ppz style */
 body {
@@ -39,7 +39,7 @@ body > .menu-drawer {
   --width: 16em !important;
 
     .menu-view {
-      background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .01));
+      background: hsla(var(--color-fore-base), .01);
     }
 }
 body > .menu-drawer .menu-icon-wrapper {
@@ -52,14 +52,14 @@ body > .menu-drawer .menu-icon-wrapper:hover {
 }
 
     .menu-view {
-      background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .01));
+      background: hsla(var(--color-fore-base), .01);
     }
 body > .menu-drawer .menu-view {
   --padding: 1em;
   box-sizing: border-box;
 
       menu {
-        border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), calc(.04 * var(--ppz-ccs-color-ratio)))
+        border-top: 1px solid hsla(var(--color-fore-base), .04)
       }
 }
 body > .menu-drawer .menu-view h1 {
@@ -73,7 +73,7 @@ body > .menu-drawer .menu-view h1 a {
 }
 
       menu {
-        border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), calc(.04 * var(--ppz-ccs-color-ratio)))
+        border-top: 1px solid hsla(var(--color-fore-base), .04)
       }
 body > .menu-drawer .menu-view menu {
   padding: 0;
@@ -84,14 +84,14 @@ body > .menu-drawer .menu-view menu li {
 }
 body > .menu-drawer .menu-view menu li a {
   display: block;
-  color: hsla(var(--ppz-ccs-color-fore-base), .6);
+  color: hsla(var(--color-fore-base), .6);
   transition: all var(--ani-duration);
   padding: var(--padding);
   text-decoration: none;
 }
 @media (prefers-color-scheme: dark) {
   body > .menu-drawer .menu-view menu li a {
-    color: hsla(var(--ppz-ccs-color-fore-base), .8);
+    color: hsla(var(--color-fore-base), .8);
   }
 }
 body > .menu-drawer .menu-view menu li a::before {
@@ -99,8 +99,8 @@ body > .menu-drawer .menu-view menu li a::before {
   margin: 0 1em 0 0.15em;
 }
 body > .menu-drawer .menu-view menu li a:hover {
-  color: hsla(var(--ppz-ccs-color-fore-base), 1);
-  background: hsla(var(--ppz-ccs-color-fore-base), .04);
+  color: hsla(var(--color-fore-base), 1);
+  background: hsla(var(--color-fore-base), .04);
 }
 body > main {
   flex: 1;
@@ -171,7 +171,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   width: 0.4em;
   height: 0.4em;
   border-radius: 50%;
-  background: var(--ppz-ccs-color-fore);
+  background: var(--color-fore);
   opacity: 0.7;
 }
 .page ul li:hover::before {
@@ -179,7 +179,7 @@ body > main:not(:has(.page:target)) .page:first-child {
 }
 
   pre {
-    background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+    background: hsla(var(--color-fore-base), .02);
   }
 .page pre {
   margin: 1em 0;
@@ -204,7 +204,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   height: 20em;
   outline: none;
   border: none;
-  box-shadow: 0 0 1em hsla(var(--ppz-ccs-color-fore-base), .1);
+  box-shadow: 0 0 1em hsla(var(--color-fore-base), .1);
 }
 .page .footer {
   margin-top: 3em;

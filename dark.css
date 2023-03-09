@@ -1,0 +1,4 @@
+:root {
+  background-color: hsl(var(--ppz-ccs-color-back-h), var(--ppz-ccs-color-back-s), var(--ppz-ccs-color-back-l));
+  color: hsl(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l));
+}

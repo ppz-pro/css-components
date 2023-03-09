@@ -1,7 +1,7 @@
 @import url('./base.css');
 
 .ppz-ccs.menu-icon1 {
-  --size: 1em;
+  --size: var(--font-size);
   --line-width: 2px;
   --line-width-close: 1px;
   --color: currentColor;
@@ -19,7 +19,7 @@
   display: block;
   visibility: visible;
   position: absolute;
-  transition: all var(--ppz-ccs-ani-duration);
+  transition: all var(--ani-duration);
 }
 
 /* 使用“::before 的上、下边”作为上线、下线 */

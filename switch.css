@@ -2,10 +2,10 @@
 
 .ppz-ccs.switch {
   /* customizable */
-  --background-color-off: hsla(var(--ppz-ccs-color-fore-base), calc(.1 * var(--ppz-ccs-color-ratio)));
-  --background-color-on: var(--ppz-ccs-color-success);
+  --background-color-off: hsla(var(--color-fore-base), .1);
+  --background-color-on: var(--color-success);
 
-  --height: 2em;
+  --height: calc(2 * var(--font-size));
   --ratio: .618;
   --control-height-ratio: .76;
   --control-color: #fff;
@@ -14,7 +14,7 @@
   --width: calc(var(--height) / var(--ratio));
   --control-height: calc(var(--height) * var(--control-height-ratio));
   --control-margin: calc(calc(var(--height) - var(--control-height)) / 2);
-  --control-box-shadow: 0 0 var(--control-margin) hsla(var(--ppz-ccs-color-fore-base), calc(.2 * var(--ppz-ccs-color-ratio)));
+  --control-box-shadow: 0 0 var(--control-margin) hsla(var(--color-fore-base), .2);
 
   position: relative;
   cursor: pointer;
@@ -35,7 +35,7 @@
   bottom: 0;
   border-radius: calc(var(--height) / 2);
   background-color: var(--background-color-off);
-  transition: var(--ppz-ccs-ani-duration) background-color;
+  transition: var(--ani-duration) background-color;
 }
 .ppz-ccs.switch:checked::before {
   background-color: var(--background-color-on);
@@ -46,7 +46,7 @@
   display: block;
   visibility: visible;
 
-  transition: var(--ppz-ccs-ani-duration) transform;
+  transition: var(--ani-duration) transform;
   position: absolute;
   top: var(--control-margin);
   left: var(--control-margin);

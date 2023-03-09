@@ -1,10 +1,5 @@
 @import url('./variables.css');
 
-:root {
-  color: var(--ppz-ccs-color-fore);
-  background-color: var(--ppz-ccs-color-back);
-}
-
 .ppz-ccs label, label.ppz-ccs {
   display: block;
 }
@@ -12,6 +7,6 @@
   display: block;
   margin: 0;
   padding: 0;
-  font-size: inherit;
-  color: inherit;
+  font-size: var(--font-size);
+  color: var(--color-fore);
 }
