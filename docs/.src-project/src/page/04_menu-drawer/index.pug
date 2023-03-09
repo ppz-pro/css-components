@@ -2,3 +2,20 @@ extends ../page-layout.pug
 
 block page
   h2 CCS #{pageName}
+
+  h3 基本用法
+  ul
+    li
+      | 引入 css:
+      code.inline= '<link rel="stylesheet" href=".../menu-drawer.css">'
+    li
+      | 一些 html:
+      code.inline= config.code.basic
+  -var basicDemo = demos['menu-drawer']
+  pre
+    code= basicDemo.html
+  .demo-wrapper
+    .header
+      label 效果：
+      a.link(href=basicDemo.htmlName download=basicDemo.name) 下载源码
+    iframe(src=basicDemo.htmlName)

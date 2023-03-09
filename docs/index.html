@@ -282,7 +282,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   &lt;head&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
-    &lt;title&gt;CCS Switch&lt;/title&gt;
+    &lt;title&gt;CCS .switch&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.2/switch.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -303,6 +303,33 @@ body > main:not(:has(.page:target)) .page:first-child {
 </div></div>
       <div class="page" id="menu-icon">
 <h2>CCS .menu-icon</h2>
+<h3>基本用法</h3>
+<ul>
+  <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../menu-icon.css&quot;&gt;</code></li>
+  <li>一些 html:<code class="inline">&lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
+  &lt;input type=&quot;checkbox&quot;&gt;
+&lt;/label&gt;</code></li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta charset=&quot;utf8&quot;&gt;
+    &lt;title&gt;CCS .menu-icon&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.2/menu-icon.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
+      &lt;input type=&quot;checkbox&quot;&gt;
+    &lt;/label&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<div class="demo-wrapper">
+  <div class="header">
+    <label>效果：</label><a class="link" href="menu-icon.html" download="menu-icon">下载源码</a>
+  </div>
+  <iframe src="menu-icon.html"></iframe>
+</div>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#switch">switch</a>
   </div>
@@ -311,6 +338,39 @@ body > main:not(:has(.page:target)) .page:first-child {
 </div></div>
       <div class="page" id="menu-drawer">
 <h2>CCS .menu-drawer</h2>
+<h3>基本用法</h3>
+<ul>
+  <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../menu-drawer.css&quot;&gt;</code></li>
+  <li>一些 html:<code class="inline">&lt;div class=&quot;ppz-ccs menu-drawer&quot;&gt;
+  &lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
+    &lt;input type=&quot;checkbox&quot;&gt;
+  &lt;/label&gt;
+  &lt;div class=&quot;ppz-ccs menu-view&quot;&gt;菜单内容区&lt;/div&gt;
+&lt;/div&gt;</code></li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta charset=&quot;utf8&quot;&gt;
+    &lt;title&gt;CCS .menu-drawer&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.2/menu-drawer.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;ppz-ccs menu-drawer&quot;&gt;
+      &lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
+        &lt;input type=&quot;checkbox&quot;&gt;
+      &lt;/label&gt;
+      &lt;div class=&quot;ppz-ccs menu-view&quot;&gt;菜单内容区&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<div class="demo-wrapper">
+  <div class="header">
+    <label>效果：</label><a class="link" href="menu-drawer.html" download="menu-drawer">下载源码</a>
+  </div>
+  <iframe src="menu-drawer.html"></iframe>
+</div>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#menu-icon">menu-icon</a>
   </div>
