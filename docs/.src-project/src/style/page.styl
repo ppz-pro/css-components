@@ -12,14 +12,14 @@
     font-size: Size()
     font-weight: bold
   h2, h3, h4
-    margin-bottom: Size(.8)
+    margin-bottom: .8em
   h3, h4
     margin-top: Size(2)
   h2 + h3, h3 + h4
     margin-top: 0
   p
     margin: $size 0
-    line-height: Size(2)
+    line-height: 1.8
     span
       display: block
   a.link
@@ -32,11 +32,12 @@
       list-style: none
       padding-left: Size(.5)
       display: flex
-      align-items: center
-      line-height: 2
+      align-items: flex-start
+      line-height: Size(2)
       &::before
         content: ''
         display: inline-block
+        margin-top: Size(.75)
         margin-right: Size(.5)
         width: Size(.4)
         height: Size(.4)
@@ -46,9 +47,25 @@
       &:hover::before
         opacity: 1
 
+  code
+    font-size: Size(.9)
+  code.inline
+    white-space: pre-wrap
+    margin: 0 Size(.5)
+    padding: 0 Size(.5)
+    line-height: inherit
+    background: ColorFore(.02);
+    color: ColorFore()
+  
+  li:has(code) + li:has(code) // 两个含有 code 的 li 的间距
+    margin-top: Size(.2)
+  li code
+    line-height: Size(1.5) !important
+    padding-top: Size(.25) !important
+    padding-bottom: Size(.25) !important
   pre
     background: ColorFore(.02);
-    margin: $size 0
+    margin: Size(.8) 0
     code
       display: block
       padding: $size Size(1.4)
