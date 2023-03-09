@@ -14,7 +14,7 @@
     font-size: 1em
   p
     margin: 1em 0
-    line-height: 1.5
+    line-height: 2
     span
       display: block
   a.link
@@ -28,7 +28,7 @@
       padding-left: .5em
       display: flex
       align-items: center
-      line-height: 1.5
+      line-height: 2
       &::before
         content: ''
         display: inline-block
@@ -40,17 +40,20 @@
         opacity: .7
       &:hover::before
         opacity: 1
+        
+  @css {
+    pre {
+      background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+    }
+  }
   pre
     margin: 1em 0
-    background: "hsla(var(--ppz-ccs-color-fore-base), .02)" % 1
     code
       display: block
-      padding: 1em 2em
+      padding: 1em 1.4em
       line-height: 1.5
   .demo-wrapper
     margin: 1em 0
-    width: 30em
-    max-width: 100%
     .header
       display: flex
       align-items: center

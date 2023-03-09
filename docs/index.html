@@ -28,6 +28,10 @@ body {
 }
 body > .menu-drawer {
   --width: 16em !important;
+
+    .menu-view {
+      background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .01));
+    }
 }
 body > .menu-drawer .menu-icon-wrapper {
   padding: 1em;
@@ -37,10 +41,17 @@ body > .menu-drawer .menu-icon-wrapper {
 body > .menu-drawer .menu-icon-wrapper:hover {
   opacity: 1;
 }
+
+    .menu-view {
+      background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .01));
+    }
 body > .menu-drawer .menu-view {
   --padding: 1em;
   box-sizing: border-box;
-  background: hsla(var(--ppz-ccs-color-fore-base), .01);
+
+      menu {
+        border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), calc(.04 * var(--ppz-ccs-color-ratio)))
+      }
 }
 body > .menu-drawer .menu-view h1 {
   padding: var(--padding);
@@ -51,8 +62,11 @@ body > .menu-drawer .menu-view h1 a {
   color: inherit;
   text-decoration: none;
 }
+
+      menu {
+        border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), calc(.04 * var(--ppz-ccs-color-ratio)))
+      }
 body > .menu-drawer .menu-view menu {
-  border-top: 1px solid hsla(var(--ppz-ccs-color-fore-base), .04);
   padding: 0;
   margin: 0;
 }
@@ -65,6 +79,11 @@ body > .menu-drawer .menu-view menu li a {
   transition: all var(--ani-duration);
   padding: var(--padding);
   text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+  body > .menu-drawer .menu-view menu li a {
+    color: hsla(var(--ppz-ccs-color-fore-base), .8);
+  }
 }
 body > .menu-drawer .menu-view menu li a::before {
   content: '>';
@@ -79,9 +98,11 @@ body > main {
   max-height: 100%;
   box-sizing: border-box;
   overflow: auto;
-  padding: 0 5em 5em;
+  padding: 0 3em 5em;
 }
 body > main .page {
+  max-width: 800px;
+  margin: 0 auto;
   display: none;
 }
 body > main .page:target {
@@ -111,7 +132,7 @@ body > main:not(:has(.page:target)) .page:first-child {
 }
 .page p {
   margin: 1em 0;
-  line-height: 1.5;
+  line-height: 2;
 }
 .page p span {
   display: block;
@@ -129,7 +150,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   padding-left: 0.5em;
   display: flex;
   align-items: center;
-  line-height: 1.5;
+  line-height: 2;
 }
 .page ul li::before {
   content: '';
@@ -144,19 +165,20 @@ body > main:not(:has(.page:target)) .page:first-child {
 .page ul li:hover::before {
   opacity: 1;
 }
+
+  pre {
+    background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+  }
 .page pre {
   margin: 1em 0;
-  background: hsla(var(--ppz-ccs-color-fore-base), .02);
 }
 .page pre code {
   display: block;
-  padding: 1em 2em;
+  padding: 1em 1.4em;
   line-height: 1.5;
 }
 .page .demo-wrapper {
   margin: 1em 0;
-  width: 30em;
-  max-width: 100%;
 }
 .page .demo-wrapper .header {
   display: flex;
@@ -193,6 +215,7 @@ body > main:not(:has(.page:target)) .page:first-child {
           <li><a href="#switch">switch</a></li>
           <li><a href="#menu-icon">menu-icon</a></li>
           <li><a href="#menu-drawer">menu-drawer</a></li>
+          <li><a href="#原理">原理</a></li>
         </menu>
       </div>
     </div>
@@ -255,6 +278,81 @@ body > main:not(:has(.page:target)) .page:first-child {
 <h2>menu-drawer</h2>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#menu-icon">menu-icon</a>
+  </div>
+  <div class="next"><span>下一页：</span><a class="link" href="#原理">原理</a>
+  </div>
+</div></div>
+      <div class="page" id="原理">
+<h2>CCS 原理</h2>
+<p>
+  css-components 和你正在看的这个网页，都没有半句 js。
+  如果说 css-components 这个库，不使用 js 是为了防止 ui 逻辑入侵业务逻辑，
+  那么这个网页不使用 js 则纯属一种实验：验证一下不用 js 能做出什么效果。
+  我的结论是：没有 js 绝对不行；但是，仅 css 和 html 也可以做出有趣的东西。
+</p>
+<p>这里分享一下这个项目给我的经验。</p>
+<h3>数据存在哪？</h3>
+<p>
+  css 是有变量的，但是 css 不能修改变量的值。
+  这里是用 html 保存数据的。
+  <label>checkbox <input type="checkbox"></label>
+  和
+  <label>radio <input type="radio"></label>
+  都可以保存状态。
+</p>
+<p>比如，你可以用 checkbox 保存“打开”与“关闭”的状态。</p>
+<p>或者，你的状态比较复杂，可以使用 radio，比如：</p>
+<ul>
+  <li>&lt;input type=&quot;radio&quot; name=&quot;xxx&quot; value=&quot;1&quot;&gt;</li>
+  <li>&lt;input type=&quot;radio&quot; name=&quot;xxx&quot; value=&quot;2&quot;&gt;</li>
+  <li>&lt;input type=&quot;radio&quot; name=&quot;xxx&quot; value=&quot;3&quot;&gt;</li>
+</ul>
+<p>来记录三种状态。</p>
+<p>如果你不喜欢太多 radio，也可以这样：</p>
+<ul>
+  <li>&lt;input type=&quot;checkbox&quot; name=&quot;x&quot;&gt;</li>
+  <li>&lt;input type=&quot;checkbox&quot; name=&quot;y&quot;&gt;</li>
+</ul>
+<p>组合一下，两个 checkbox 可以记录 4 种状态：</p>
+<ul>
+  <li>x 为 1，y 为 1</li>
+  <li>x 为 1，y 为 0</li>
+  <li>x 为 0，y 为 1</li>
+  <li>x 为 0，y 为 0</li>
+</ul>
+<p>一个 checkbox 不就是一个 bit 嘛~</p>
+<h3>数据变化时，怎么响应的？</h3>
+<p>答：使用选择器。</p>
+<p>看下面的例子：</p>
+<pre><code>[type=checkbox] + div {
+  width: 0;
+}
+[type=checkbox]:checked +div {
+  width: 100px;
+}</code></pre>
+<p>
+  这段 css 表达了一个“类似事件触发”的逻辑：
+  当 checkbox 未 check 时，后面的 div 宽度设为 0；
+  当 checkbox 已 check 时，后面的 div 宽度设为 100px。
+</p>
+<p>
+  上面是响应事件的“原理”。
+  但实际使用时，这些“事件触发”经常会“误伤”到不相干的元素。
+  这就要求使用者，要对 css 选择器有较高的熟悉程度。
+  其中 :has 选择器、:nth-child 选择器（对元素结构有要求时）、直接子元素选择器、下一个兄弟元素选择器，非常有用。
+</p>
+<h3>自定义参数？</h3>
+<p>TODO</p>
+<h3>亮暗模式？</h3>
+<p>css 有个“媒体查询”是这样用的：（下面是真正的 css 代码，不是 less 或 scss）</p>
+<pre><code>@media (prefers-color-scheme: dark) {
+  div {
+    color: green
+  }
+}</code></pre>
+<p>：系统切换成暗模式时，所有 div 的 color 设为 green。</p>
+<div class="footer">
+  <div class="prev"><span>上一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
   </div>
   <div class="next">
   </div>
