@@ -1,76 +1,74 @@
+@import 'src/style/base'
+
 .page
   // h2: 页面标题，一个页面只有一个
   // h3: 页面内一级模块标题
   // h4: 页面内二级模块标题
   h2
-    padding-top: 3rem
+    padding-top: Size(3)
     font-weight: normal
-    font-size: 2em
+    font-size: Size(2)
   h4
-    font-size: 1em
+    font-size: Size()
     font-weight: bold
   h2, h3, h4
-    margin-bottom: .8em
+    margin-bottom: Size(.8)
   h3, h4
-    margin-top: 2em
+    margin-top: Size(2)
   h2 + h3, h3 + h4
     margin-top: 0
   p
-    margin: 1em 0
-    line-height: 2
+    margin: $size 0
+    line-height: Size(2)
     span
       display: block
   a.link
-    color: "hsl(211, 97%, 54%)" % 1
+    color: ColorLink()
     text-decoration: none
   ul
     padding: 0
     margin: 0
     li
       list-style: none
-      padding-left: .5em
+      padding-left: Size(.5)
       display: flex
       align-items: center
       line-height: 2
       &::before
         content: ''
         display: inline-block
-        margin-right: .5em
-        width: .4em
-        height: .4em
+        margin-right: Size(.5)
+        width: Size(.4)
+        height: Size(.4)
         border-radius: 50%
-        background: var(--color-fore)
+        background: ColorFore()
         opacity: .7
       &:hover::before
         opacity: 1
-        
-  @css {
-    pre {
-      background: hsla(var(--color-fore-base), .02);
-    }
-  }
+
   pre
-    margin: 1em 0
+    background: ColorFore(.02);
+    margin: $size 0
     code
       display: block
-      padding: 1em 1.4em
+      padding: $size Size(1.4)
       line-height: 1.5
   .demo-wrapper
-    margin: 1em 0
+    margin: $size 0
     .header
       display: flex
       align-items: center
       justify-content: space-between
-      margin-bottom: 1em
+      margin-bottom: $size
     iframe
       width: 100%
       margin: 0
-      height: 20em
+      height: Size(16)
       outline: none
       border: none
-      box-shadow: 0 0 1em "hsla(var(--color-fore-base), .1)" % 1
+      box-shadow: 0 0 $size ColorFore(.1)
   
   .footer
-    margin-top: 3em
+    margin-top: Size(3)
     display: flex
     justify-content: space-between

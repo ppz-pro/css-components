@@ -20,5 +20,3 @@ exports.Pug = (path, options) ->
     ...options
   })
 
-exports.Stylus = (path) ->
-  Stylus.render(FS.readFileSync('src/page/' + path).toString())

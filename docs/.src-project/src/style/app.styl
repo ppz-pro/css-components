@@ -1,7 +1,10 @@
+@import 'src/style/base'
+
 /* reset */
 html, body
   padding: 0
   margin: 0
+
 html
   line-height: 1
 h1, h2, h3, h4
@@ -9,74 +12,64 @@ h1, h2, h3, h4
   padding: 0
 code.inline
   white-space: pre-wrap
-  margin: 0 .5em
-  padding: 0 .5em
-@css {
-  code {
-    background: hsla(var(--color-fore-base), .02);
-  }
-}
+  margin: 0 Size(.5)
+  padding: 0 Size(.5)
+  background: ColorFore(.02);
+
 /* ppz style */
 body
   height: 100vh
   display: flex
   & > .menu-drawer
-    --width: 16em !important
+    --width: Size(16) !important
     .menu-icon-wrapper
-      padding: 1em
+      padding: $size
       cursor: pointer
       opacity: .6
       &:hover
         opacity: 1
     
-    @css {
-      .menu-view {
-        background: hsla(var(--color-fore-base), .01);
-      }
-    }
     .menu-view
-      --padding: 1em
+      --padding: $size
+      background: ColorFore(.01)
       box-sizing: border-box
       h1
         padding: var(--padding)
-        font-size: inherit
+        font-size: $size
         font-weight: bold
         a
-          color: inherit
+          color: ColorFore()
           text-decoration: none
-      @css {
-        menu {
-          border-top: 1px solid hsla(var(--color-fore-base), .04)
-        }
-      }
+
       menu
         padding: 0
         margin: 0
+        border-top: 1px solid ColorFore(.04)
         li
           list-style: none
           a
             display: block
-            color: "hsla(var(--color-fore-base), .6)" % 1
+            color: ColorFore(.6)
             @media (prefers-color-scheme: dark)
-              color: "hsla(var(--color-fore-base), .8)" % 1
+              color: ColorFore(.8)
 
             transition: all var(--ani-duration);
             padding: var(--padding);
             text-decoration: none
             &::before
               content: '>'
-              margin: 0 1em 0 .15em
+              margin: 0 $size 0 Size(.15)
           a:hover // :not(:local-link)
             // 所有浏览器未支持 :local-link https://developer.mozilla.org/en-US/docs/Web/CSS/:local-link
-            color: "hsla(var(--color-fore-base), 1)" % 1
-            background: "hsla(var(--color-fore-base), .04)" % 1
+            color: ColorFore()
+            background: ColorFore(.04)
 
   & > main
     flex: 1
     max-height: 100%
     box-sizing: border-box
     overflow: auto
-    padding: 0 3em 5em
+    padding: 0 Size(3) Size(5)
     // css router
     .page
       max-width: 800px
