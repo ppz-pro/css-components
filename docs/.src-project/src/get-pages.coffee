@@ -31,9 +31,11 @@ module.exports = ->
       return result
     
     config = require('./page/' + dir.name + '/index.coffee')
+    pageName = '.' + id
     return {
       id
+      pageName
       config
-      html: -> Pug(dir.name + '/index.pug', { demos, config, pages, index }) # ... mess code
+      html: -> Pug(dir.name + '/index.pug', { demos, config, pages, index, pageName }) # ... mess code
     }
   return pages

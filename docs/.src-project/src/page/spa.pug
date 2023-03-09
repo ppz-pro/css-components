@@ -17,8 +17,9 @@ html(lang = 'en')
           a(href='https://github.com/ppz-pro/css-components') CCS Tutorial
         menu
           each page in pages
+            - let { config: { isComponent, name }, id, pageName } = page
             li
-              a(href = '#' + page.id)= page.config.name
+              a(href = '#' + id)= isComponent ? pageName : name
     main
       each page in pages
         .page(id = page.id) !{page.html()}
