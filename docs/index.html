@@ -295,7 +295,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   <iframe src="switch.html"></iframe>
 </div>
 <h3>慢一点，大一点</h3>
-<p>传入“参数”<code class="inline">height</code>和<code class="inline">ani-duration</code></p>
+<p>传入“参数”<code class="inline">font-size</code>和<code class="inline">ani-duration</code></p>
 <p>完整代码：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -306,8 +306,8 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.4-alpha/switch.css&quot;&gt;
     &lt;style&gt;
       .ppz-ccs.switch {
-        --height: 100px;
-        --ani-duration: 2s;
+        --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
+        --ani-duration: 2s; /* 所有动画在 2 秒内完成 */
       }
     &lt;/style&gt;
   &lt;/head&gt;
@@ -358,7 +358,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   <iframe src="menu-icon.html"></iframe>
 </div>
 <h3>慢一点，大一点</h3>
-<p>传入“参数”<code class="inline">height</code>和<code class="inline">ani-duration</code></p>
+<p>传入“参数”<code class="inline">font-size</code>和<code class="inline">ani-duration</code></p>
 <p>完整代码：</p>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
@@ -369,8 +369,8 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.4-alpha/menu-icon.css&quot;&gt;
     &lt;style&gt;
       .ppz-ccs.menu-icon {
-        --size: 100px;
-        --ani-duration: 2s;
+        --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
+        --ani-duration: 2s; /* 所有动画在 2 秒内完成 */
       }
     &lt;/style&gt;
   &lt;/head&gt;
