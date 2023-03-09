@@ -21,6 +21,15 @@ h4 {
   margin: 0;
   padding: 0;
 }
+code.inline {
+  white-space: pre-wrap;
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+}
+
+code {
+  background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+}
 /* ppz style */
 body {
   height: 100vh;
@@ -113,6 +122,12 @@ body > main:not(:has(.page:target)) .page:first-child {
 }
 .page h2 {
   padding-top: 3rem;
+  font-weight: normal;
+  font-size: 2em;
+}
+.page h4 {
+  font-size: 1em;
+  font-weight: bold;
 }
 .page h2,
 .page h3,
@@ -126,9 +141,6 @@ body > main:not(:has(.page:target)) .page:first-child {
 .page h2 + h3,
 .page h3 + h4 {
   margin-top: 0;
-}
-.page h4 {
-  font-size: 1em;
 }
 .page p {
   margin: 1em 0;
@@ -239,7 +251,7 @@ body > main:not(:has(.page:target)) .page:first-child {
   &lt;head&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
-    &lt;title&gt;switch&lt;/title&gt;
+    &lt;title&gt;load from cdn&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.2/switch.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
@@ -259,7 +271,30 @@ body > main:not(:has(.page:target)) .page:first-child {
   </div>
 </div></div>
       <div class="page" id="switch">
-<h2>switch</h2>
+<h2>CCS Switch</h2>
+<h3>基本用法</h3>
+<ul>
+  <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../switch.css&quot;&gt;</code></li>
+  <li>一个元素:<code class="inline">&lt;input class=&quot;ppz-ccs switch&quot; type=&quot;checkbox&quot;&gt;</code></li>
+</ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta charset=&quot;utf8&quot;&gt;
+    &lt;title&gt;CCS Switch&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.2/switch.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;input class=&quot;ppz-ccs switch&quot; type=&quot;checkbox&quot;&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<div class="demo-wrapper">
+  <div class="header">
+    <label>效果：</label><a class="link" href="switch.html" download="switch">下载源码</a>
+  </div>
+  <iframe src="switch.html"></iframe>
+</div>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#get-started">起步</a>
   </div>

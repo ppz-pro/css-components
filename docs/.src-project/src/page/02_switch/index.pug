@@ -1,4 +1,19 @@
 extends ../page-layout.pug
 
 block page
-  h2 switch
+  h2 CCS Switch
+  h3 基本用法
+  ul
+    li
+      | 引入 css:
+      code.inline= '<link rel="stylesheet" href=".../switch.css">'
+    li
+      | 一个元素:
+      code.inline= '<input class="ppz-ccs switch" type="checkbox">'
+  pre
+    code= demos.switch.html
+  .demo-wrapper
+    .header
+      label 效果：
+      a.link(href=demos.switch.htmlName download=demos.switch.name) 下载源码
+    iframe(src=demos.switch.htmlName)

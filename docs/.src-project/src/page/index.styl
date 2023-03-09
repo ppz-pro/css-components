@@ -7,7 +7,15 @@ html
 h1, h2, h3, h4
   margin: 0
   padding: 0
-
+code.inline
+  white-space: pre-wrap
+  margin: 0 .5em
+  padding: 0 .5em
+@css {
+  code {
+    background: hsla(var(--ppz-ccs-color-fore-base), calc(var(--ppz-ccs-color-ratio) * .02));
+  }
+}
 /* ppz style */
 body
   height: 100vh
