@@ -1,0 +1,37 @@
+@import url('./variables.css');
+
+.ppz-ccs.tabs {
+  --selected-border-width: 3px;
+  --selected-border-color: var(--color-primary, var(--color-link));
+  border-bottom: 1px solid hsla(var(--color-fore-base), .1);
+  font-weight: bold;
+}
+.ppz-ccs.tab {
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: var(--tab-padding, calc(var(--font-size) / 1.6));
+  position: relative;
+  transition: opacity var(--ani-duration);
+}
+.ppz-ccs.tab + .tab {
+  margin-left: var(--tab-gap, var(--font-size));
+}
+.ppz-ccs.tab:not(:has(:checked)):not(:hover) {
+  opacity: .6;
+}
+
+.ppz-ccs.tab > input {
+  display: none;
+}
+.ppz-ccs.tab::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: calc(var(--selected-border-width) / -2);
+  height: var(--selected-border-width);
+  transition: background-color var(--ani-duration);
+  width: 100%;
+}
+.ppz-ccs.tab:has(:checked)::after {
+  background: var(--selected-border-color);
+}

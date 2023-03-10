@@ -3,7 +3,7 @@
 label.ppz-ccs {
   display: block;
 }
-.ppz-ccs input, input.ppz-ccs {
+input.ppz-ccs {
   display: block;
   margin: 0;
   padding: 0;
