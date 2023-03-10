@@ -1,6 +1,6 @@
 @import url('./variables.css');
 
-.ppz-ccs label, label.ppz-ccs {
+label.ppz-ccs {
   display: block;
 }
 .ppz-ccs input, input.ppz-ccs {
