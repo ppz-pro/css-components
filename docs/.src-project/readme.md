@@ -1,4 +1,4 @@
-# CCS Tutorial Builder
+# CCS Document Builder
 这个项目使用：
 + Node.js
 + Pug
