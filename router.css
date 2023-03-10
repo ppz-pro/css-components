@@ -1,0 +1,6 @@
+.ppz-ccs.router .ppz-ccs.page:not(:target) {
+  display: none;
+}
+.ppz-ccs.router:not(:has(.ppz-ccs.page:target)) .ppz-ccs.page:first-child {
+  display: block;
+}
