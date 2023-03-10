@@ -13,14 +13,33 @@ h1, h2, h3, h4
 
 /* ppz style */
 body
-  height: 100vh
-  display: flex
-  & > .menu-drawer
+  +pc()
+    height: 100vh
+    display: flex
+  & > .ppz-ccs.menu-drawer
     --width: Size(16) !important
+    +mobile()
+      position: fixed
+      z-index: 10
+      height: 100%
+      box-shadow: 0 0 $size ColorFore(.05)
+      &::after
+        content: ''
+        display: block
+        position: absolute
+        inset: 0
+        z-index: -1
+        background: ColorBack(.9)
+        filter: blur()
+
     .menu-icon-wrapper
       padding: $size
       cursor: pointer
       opacity: .6
+      background: ColorBack(1)
+      border-radius: 50%
+      +mobile()
+        opacity: .8
       &:hover
         opacity: 1
     
@@ -69,6 +88,10 @@ body
     overflow: auto
     padding: 0 Size(3) Size(5)
     // css router
+    
+    +mobile()
+      padding-left: Size(1)
+      padding-right: Size(1)
     .page
       max-width: 800px
       margin: 0 auto

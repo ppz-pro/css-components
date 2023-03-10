@@ -30,9 +30,10 @@
     li
       list-style: none
       padding-left: Size(.5)
-      display: flex
-      align-items: flex-start
       line-height: Size(2)
+      +pc()
+        display: flex
+        align-items: flex-start
       &::before
         content: ''
         display: inline-block
@@ -62,9 +63,13 @@
     line-height: Size(1.5) !important
     padding-top: Size(.25) !important
     padding-bottom: Size(.25) !important
+    +mobile()
+      display: block
   pre
     background: ColorFore(.02);
-    margin: Size(.8) 0
+    margin: Size(.6) 0
+    max-width: 100%
+    overflow: auto
     code
       display: block
       padding: $size Size(1.4)
