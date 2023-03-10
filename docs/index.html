@@ -4,8 +4,9 @@
     <title>CSS Components</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="utf8">
-    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.7/menu-drawer.css">
-    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.7/dark.css">
+    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.8/menu-drawer.css">
+    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.8/dark.css">
+    <link rel="stylesheet" href="https://unpkg.com/@ppzp/css-components@0.0.8/router.css">
     <style>html,
 body {
   padding: 0;
@@ -125,13 +126,6 @@ body > main {
 body > main .page {
   max-width: 800px;
   margin: 0 auto;
-  display: none;
-}
-body > main .page:target {
-  display: block;
-}
-body > main:not(:has(.page:target)) .page:first-child {
-  display: block;
 }
 .page h2 {
   padding-top: calc(var(--ppz-ccs-font-size) * 3);
@@ -157,7 +151,16 @@ body > main:not(:has(.page:target)) .page:first-child {
 }
 .page p {
   margin: var(--ppz-ccs-font-size) 0;
+}
+.page p:not([class]) {
   line-height: 1.8;
+}
+.page p.sub {
+  padding: calc(var(--ppz-ccs-font-size) * 0.5) calc(var(--ppz-ccs-font-size) * 1);
+  background: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.01);
+  color: hsla(var(--ppz-ccs-color-fore-h), var(--ppz-ccs-color-fore-s), var(--ppz-ccs-color-fore-l), 0.8);
+  font-size: calc(var(--ppz-ccs-font-size) * 0.9);
+  line-height: 1.5;
 }
 .page a.link {
   color: hsla(var(--ppz-ccs-color-link-h), var(--ppz-ccs-color-link-s), var(--ppz-ccs-color-link-l), 1);
@@ -236,6 +239,9 @@ body > main:not(:has(.page:target)) .page:first-child {
   justify-content: space-between;
   margin-bottom: var(--ppz-ccs-font-size);
 }
+.page .demo-wrapper .header > div > * {
+  margin-left: calc(var(--ppz-ccs-font-size) * 0.5);
+}
 .page .demo-wrapper iframe {
   width: 100%;
   margin: 0;
@@ -265,14 +271,15 @@ body > main:not(:has(.page:target)) .page:first-child {
           <li><a href="#switch">.switch</a></li>
           <li><a href="#menu-icon">.menu-icon</a></li>
           <li><a href="#menu-drawer">.menu-drawer</a></li>
+          <li><a href="#router">.router</a></li>
           <li><a href="#全局参数">其他配置</a></li>
           <li><a href="#原理">原理</a></li>
         </menu>
       </div>
     </div>
-    <main>
-      <div class="page" id="get-started">
-<h2>CCS 使用介绍</h2><a href="https://github.com/ppz-pro/css-components/blob/main/LICENSE"><img title="license" src="https://img.shields.io/github/license/ppz-pro/css-components"/></a><span> </span><a href="https://github.com/ppz-pro/css-components/releases"><img title="license" src="https://img.shields.io/github/release/ppz-pro/css-components"/></a>
+    <main class="ppz-ccs router">
+      <div class="ppz-ccs page" id="get-started">
+<h2>CSS Components</h2><a href="https://github.com/ppz-pro/css-components/blob/main/LICENSE"><img title="license" src="https://img.shields.io/github/license/ppz-pro/css-components"/></a><span> </span><a href="https://github.com/ppz-pro/css-components/releases"><img title="license" src="https://img.shields.io/github/release/ppz-pro/css-components"/></a>
 <p><b>C</b>ss-<b>C</b>omponent<b>S</b> 是一个纯 css 的组件库，目前只有三个组件：</p>
 <ul>
   <li><a class="link" href="#switch">switch</a></li>
@@ -289,14 +296,14 @@ body > main:not(:has(.page:target)) .page:first-child {
 <pre><code>npm install @ppzp/css-components</code></pre>
 <p>然后，在你的代码里可以这样加载 switch 组件：</p>
 <pre><code>import '@ppzp/css-components/switch.css'</code></pre>
-<h4>或者，直接从 <a class="link" href="https://unpkg.com/@ppzp/css-components@0.0.7/">CDN</a> 加载，像这样：</h4>
+<h4>或者，直接从 <a class="link" href="https://unpkg.com/@ppzp/css-components@0.0.8/">CDN</a> 加载，像这样：</h4>
 <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;en&quot;&gt;
   &lt;head&gt;
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;load from cdn&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/switch.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/switch.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;input class=&quot;ppz-ccs switch&quot; type=&quot;checkbox&quot;&gt;
@@ -314,8 +321,8 @@ body > main:not(:has(.page:target)) .page:first-child {
   <div class="next"><span>下一页：</span><a class="link" href="#switch">switch</a>
   </div>
 </div></div>
-      <div class="page" id="switch">
-<h2>CCS .switch</h2>
+      <div class="ppz-ccs page" id="switch">
+<h2>CSS .switch</h2>
 <h3>基本用法</h3>
 <ul>
   <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../switch.css&quot;&gt;</code></li>
@@ -328,7 +335,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .switch&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/switch.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/switch.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;input class=&quot;ppz-ccs switch&quot; type=&quot;checkbox&quot;&gt;
@@ -348,7 +355,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .switch&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/switch.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/switch.css&quot;&gt;
     &lt;style&gt;
       .ppz-ccs.switch {
         --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
@@ -372,8 +379,8 @@ body > main:not(:has(.page:target)) .page:first-child {
   <div class="next"><span>下一页：</span><a class="link" href="#menu-icon">menu-icon</a>
   </div>
 </div></div>
-      <div class="page" id="menu-icon">
-<h2>CCS .menu-icon</h2>
+      <div class="ppz-ccs page" id="menu-icon">
+<h2>CSS .menu-icon</h2>
 <h3>基本用法</h3>
 <ul>
   <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../menu-icon.css&quot;&gt;</code></li>
@@ -388,7 +395,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .menu-icon&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/menu-icon.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/menu-icon.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;label class=&quot;ppz-ccs menu-icon&quot;&gt;
@@ -410,7 +417,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .menu-icon&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/menu-icon.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/menu-icon.css&quot;&gt;
     &lt;style&gt;
       .ppz-ccs.menu-icon {
         --font-size: 100px; /* 默认为 16px，如果你想要 2 倍大，则需设置为 32px */
@@ -442,8 +449,8 @@ body > main:not(:has(.page:target)) .page:first-child {
   <div class="next"><span>下一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
   </div>
 </div></div>
-      <div class="page" id="menu-drawer">
-<h2>CCS .menu-drawer</h2>
+      <div class="ppz-ccs page" id="menu-drawer">
+<h2>CSS .menu-drawer</h2>
 <h3>基本用法</h3>
 <ul>
   <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../menu-drawer.css&quot;&gt;</code></li>
@@ -461,7 +468,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .menu-drawer&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/menu-drawer.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/menu-drawer.css&quot;&gt;
   &lt;/head&gt;
   &lt;body&gt;
     &lt;div class=&quot;ppz-ccs menu-drawer&quot;&gt;
@@ -485,7 +492,7 @@ body > main:not(:has(.page:target)) .page:first-child {
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
     &lt;meta charset=&quot;utf8&quot;&gt;
     &lt;title&gt;CCS .menu-drawer&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.7/menu-drawer.css&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/menu-drawer.css&quot;&gt;
     &lt;style&gt;
       body {
         display: flex;
@@ -521,22 +528,77 @@ body > main:not(:has(.page:target)) .page:first-child {
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#menu-icon">menu-icon</a>
   </div>
+  <div class="next"><span>下一页：</span><a class="link" href="#router">router</a>
+  </div>
+</div></div>
+      <div class="ppz-ccs page" id="router">
+<h2>CSS .router</h2>
+<p>当我发现仅用 4 行 CSS 就能实现一个“路由”，也是大吃一惊！就是下面这四行：</p>
+<pre><code>.ppz-ccs.router .ppz-ccs.page:not(:target) {
+  display: none;
+}
+.ppz-ccs.router:not(:has(.ppz-ccs.page:target)) .ppz-ccs.page:first-child {
+  display: block;
+}
+</code></pre>
+<h3>基本用法</h3>
+<ul>
+  <li>引入 css:<code class="inline">&lt;link rel=&quot;stylesheet&quot; href=&quot;.../router.css&quot;&gt;</code></li>
+  <li>一些 html:<code class="inline">&lt;div class=&quot;ppz-ccs router&quot;&gt;
+  &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page1&quot;&gt;page1&lt;/div&gt;
+  &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page1&quot;&gt;page2&lt;/div&gt;
+  &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page1&quot;&gt;page3&lt;/div&gt;
+  &lt;!-- 其他页面 --&gt;
+&lt;/div&gt;</code></li>
+</ul>
+<p>最简用法：</p>
+<p class="sub">
+  因为展示 demo 是使用了 iframe，切换时会“跳一下”。
+  但实际使用中（比如这个网页也使用此组件做路由）不会，
+  你可以打开单独页面查看。
+</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no&quot;&gt;
+    &lt;meta charset=&quot;utf8&quot;&gt;
+    &lt;title&gt;CCS .router&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/@ppzp/css-components@0.0.8/router.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;a href=&quot;#page1&quot;&gt;page1&lt;/a&gt; &lt;a href=&quot;#page2&quot;&gt;page2&lt;/a&gt; &lt;a href=&quot;#page3&quot;&gt;page3&lt;/a&gt;
+    &lt;div class=&quot;ppz-ccs router&quot;&gt;
+      &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page1&quot;&gt;这是 page1&lt;/div&gt;
+      &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page2&quot;&gt;这是 page2&lt;/div&gt;
+      &lt;div class=&quot;ppz-ccs page&quot; id=&quot;page3&quot;&gt;这是 page3&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<div class="demo-wrapper">
+  <div class="header">
+    <label>效果：</label>
+    <div><a class="link" href="router.html" download="router">下载源码</a><a class="link" href="router.html">单独页面打开</a></div>
+  </div>
+  <iframe src="router.html"></iframe>
+</div>
+<div class="footer">
+  <div class="prev"><span>上一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
+  </div>
   <div class="next"><span>下一页：</span><a class="link" href="#全局参数">其他配置</a>
   </div>
 </div></div>
-      <div class="page" id="全局参数">
+      <div class="ppz-ccs page" id="全局参数">
 <h2>CCS 其他配置</h2>
 <h3>全局参数</h3>
 <p>TODO</p>
 <h4>暗模式</h4>
 <p>TODO</p>
 <div class="footer">
-  <div class="prev"><span>上一页：</span><a class="link" href="#menu-drawer">menu-drawer</a>
+  <div class="prev"><span>上一页：</span><a class="link" href="#router">router</a>
   </div>
   <div class="next"><span>下一页：</span><a class="link" href="#原理">原理</a>
   </div>
 </div></div>
-      <div class="page" id="原理">
+      <div class="ppz-ccs page" id="原理">
 <h2>CCS 原理</h2>
 <p>css-components 和你正在看的<a class="link" href="./" download="ccs-tutorial">这个网页</a>都没有半句 js。
   如果说 css-components 这个库，不使用 js 是为了防止 ui 逻辑入侵业务逻辑，

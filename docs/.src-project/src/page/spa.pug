@@ -6,6 +6,7 @@ html(lang = 'en')
     meta(charset = 'utf8')
     link(rel = 'stylesheet' href = references.menuDrawer)
     link(rel = 'stylesheet' href = references.dark)
+    link(rel = 'stylesheet' href = references.router)
     style !{style}
 
   body
@@ -21,9 +22,9 @@ html(lang = 'en')
             - let { config: { isComponent, name }, id, pageName } = page
             li
               a(href = '#' + id)= isComponent ? pageName : name
-    main
+    main.ppz-ccs.router
       each page in pages
-        .page(id = page.id)
+        .ppz-ccs.page(id = page.id)
           | !{page.html()}
 
     a.github(href='https://github.com/ppz-pro/css-components' style='color: inherit')

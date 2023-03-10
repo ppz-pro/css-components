@@ -19,8 +19,14 @@
     margin-top: 0
   p
     margin: $size 0
-    line-height: 1.8
-  
+    &:not([class])
+      line-height: 1.8
+    &.sub
+      padding: Size(.5) Size()
+      background: ColorFore(.01)
+      color: ColorFore(.8)
+      font-size: Size(.9)
+      line-height: 1.5
   a.link
     color: ColorLink()
     text-decoration: none
@@ -81,6 +87,9 @@
       align-items: center
       justify-content: space-between
       margin-bottom: $size
+      & > div > *
+        margin-left: Size(.5)
+
     iframe
       width: 100%
       margin: 0

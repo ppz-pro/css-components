@@ -1,0 +1,34 @@
+extends ../page-layout.pug
+
+block page
+  h2 CSS #{pageName}
+
+  p 当我发现仅用 4 行 CSS 就能实现一个“路由”，也是大吃一惊！就是下面这四行：
+  pre
+    code= config.code.source
+
+  h3 基本用法
+  ul
+    li
+      | 引入 css:
+      code.inline= '<link rel="stylesheet" href=".../router.css">'
+    li
+      | 一些 html:
+      code.inline= config.code.basic
+  
+  p 最简用法：
+  p.sub
+    | 因为展示 demo 是使用了 iframe，切换时会“跳一下”。
+    | 但实际使用中（比如这个网页也使用此组件做路由）不会，
+    | 你可以打开单独页面查看。
+  - var basicDemo = demos['']
+  pre
+    code= basicDemo.html
+  .demo-wrapper
+    .header
+      label 效果：
+      div
+        a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
+        a.link(href=basicDemo.htmlName) 单独页面打开
+
+    iframe(src=basicDemo.htmlName)

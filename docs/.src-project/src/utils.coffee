@@ -11,6 +11,7 @@ references = do ->
     switch: tmpl 'switch'
     menuIcon: tmpl 'menu-icon'
     menuDrawer: tmpl 'menu-drawer'
+    router: tmpl 'router'
     dark: tmpl 'dark'
   }
 

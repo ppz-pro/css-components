@@ -1,0 +1,15 @@
+extends ../../demo-layout.pug
+
+block head
+  title CCS .router
+  link(rel='stylesheet' href=references.router)
+block body
+  a(href='#page1') page1
+  | 
+  a(href='#page2') page2
+  | 
+  a(href='#page3') page3
+  .ppz-ccs.router
+    #page1.ppz-ccs.page 这是 page1
+    #page2.ppz-ccs.page 这是 page2
+    #page3.ppz-ccs.page 这是 page3

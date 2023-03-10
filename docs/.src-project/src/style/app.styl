@@ -87,17 +87,10 @@ body
     box-sizing: border-box
     overflow: auto
     padding: 0 Size(3) Size(5)
-    // css router
-    
+
     +mobile()
       padding-left: Size(1)
       padding-right: Size(1)
     .page
       max-width: 800px
       margin: 0 auto
-      display: none
-      &:target
-        display: block
-    &:not(:has(.page:target)) // 不存在选中的 .page 时
-      .page:first-child
-        display: block
