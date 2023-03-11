@@ -2,7 +2,7 @@
 
 nav.ppz-ccs.tabs {
   --selected-border-width: 3px;
-  --selected-border-color: var(--color-primary, var(--color-link));
+  --selected-border-color: var(--color-fore);
   border-bottom: 1px solid hsla(var(--color-fore-base), .1);
   font-weight: bold;
 }
