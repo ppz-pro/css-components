@@ -1,29 +1,29 @@
 @import url('./variables.css');
 
-.ppz-ccs.tabs {
+nav.ppz-ccs.tabs {
   --selected-border-width: 3px;
   --selected-border-color: var(--color-primary, var(--color-link));
   border-bottom: 1px solid hsla(var(--color-fore-base), .1);
   font-weight: bold;
 }
-.ppz-ccs.tab {
+label.ppz-ccs.tab {
   cursor: pointer;
   display: inline-block;
   padding-bottom: var(--tab-padding, calc(var(--font-size) / 1.6));
   position: relative;
   transition: opacity var(--ani-duration);
 }
-.ppz-ccs.tab + .tab {
+label.ppz-ccs.tab + .tab {
   margin-left: var(--tab-gap, var(--font-size));
 }
-.ppz-ccs.tab:not(:has(:checked)):not(:hover) {
+label.ppz-ccs.tab:not(:has(:checked)):not(:hover) {
   opacity: .6;
 }
 
-.ppz-ccs.tab > input {
+label.ppz-ccs.tab > input {
   display: none;
 }
-.ppz-ccs.tab::after {
+label.ppz-ccs.tab::after {
   content: '';
   display: block;
   position: absolute;
@@ -32,6 +32,40 @@
   transition: background-color var(--ani-duration);
   width: 100%;
 }
-.ppz-ccs.tab:has(:checked)::after {
+label.ppz-ccs.tab:has(:checked)::after {
   background: var(--selected-border-color);
+}
+
+section.ppz-ccs.tab {
+  display: none;
+}
+nav.ppz-ccs.tabs:has(:nth-child(1) > :checked) + div.ppz-ccs.tabs > :nth-child(1){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(2) > :checked) + div.ppz-ccs.tabs > :nth-child(2){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(3) > :checked) + div.ppz-ccs.tabs > :nth-child(3){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(4) > :checked) + div.ppz-ccs.tabs > :nth-child(4){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(5) > :checked) + div.ppz-ccs.tabs > :nth-child(5){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(6) > :checked) + div.ppz-ccs.tabs > :nth-child(6){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(7) > :checked) + div.ppz-ccs.tabs > :nth-child(7){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(8) > :checked) + div.ppz-ccs.tabs > :nth-child(8){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(9) > :checked) + div.ppz-ccs.tabs > :nth-child(9){
+  display: block;
+}
+nav.ppz-ccs.tabs:has(:nth-child(10) > :checked) + div.ppz-ccs.tabs > :nth-child(10){
+  display: block;
 }
