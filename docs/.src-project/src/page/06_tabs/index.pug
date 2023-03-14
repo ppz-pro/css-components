@@ -3,15 +3,11 @@ extends ../page-layout.pug
 block page
   h2 CSS #{pageName}
 
-  p 当我发现仅用 4 行 CSS 就能实现一个“路由”，也是大吃一惊！就是下面这四行：
-  pre
-    code= config.code.source
-
   h3 基本用法
   ul
     li
       | 引入 css:
-      code.inline= '<link rel="stylesheet" href=".../router.css">'
+      code.inline= '<link rel="stylesheet" href=".../tabs.css">'
     li
       | 一些 html:
       code.inline= config.code.basic
@@ -25,6 +21,5 @@ block page
       label 效果：
       div
         a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
-        a.link(href=basicDemo.htmlName) 单独页面打开
 
     iframe(src=basicDemo.htmlName)

@@ -12,6 +12,7 @@ references = do ->
     menuIcon: tmpl 'menu-icon'
     menuDrawer: tmpl 'menu-drawer'
     router: tmpl 'router'
+    tabs: tmpl 'tabs'
     dark: tmpl 'dark'
   }
 

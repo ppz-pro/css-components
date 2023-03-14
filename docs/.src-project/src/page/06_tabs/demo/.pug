@@ -1,0 +1,16 @@
+extends ../../demo-layout.pug
+
+block head
+  title CCS .tabs
+  link(rel='stylesheet' href=references.tabs)
+block body
+  nav.ppz-ccs.tabs
+    label.ppz-ccs.tab
+      span tab1
+      input(type='radio' name='tabxxx' checked)
+    label.ppz-ccs.tab
+      span tab2
+      input(type='radio' name='tabxxx')
+  .ppz-ccs.tabs
+    section.ppz-ccs.tab 这是 tab1 的内容
+    section.ppz-ccs.tab 这是 tab2 的内容

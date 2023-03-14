@@ -8,5 +8,6 @@
 + [CSS .menu-icon](https://ppz-pro.github.io/css-components/menu-icon)
 + [CSS .menu-drawer](https://ppz-pro.github.io/css-components/menu-drawer)
 + [CSS .router](https://ppz-pro.github.io/css-components/router)
++ [CSS .tabs](https://ppz-pro.github.io/css-components/tabs)
 
 [这是教程](https://ppz-pro.github.io/css-components)
