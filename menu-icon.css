@@ -19,6 +19,7 @@
 
 .ppz-ccs.menu-icon > input {
   visibility: hidden;
+  color: inherit;
 }
 
 /* 三条线 */
