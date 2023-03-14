@@ -287,6 +287,7 @@ body > main .page {
   <li><a class="link" href="#menu-icon">.menu-icon</a></li>
   <li><a class="link" href="#menu-drawer">.menu-drawer</a></li>
   <li><a class="link" href="#router">.router</a></li>
+  <li><a class="link" href="#tabs">.tabs</a></li>
 </ul>
 <p>
   强调“纯 css”，小部分原因是“没有 js 的介入，逻辑将变得相当简单，js 就能更加关注业务”。
@@ -508,6 +509,12 @@ body > main .page {
         padding: 0;
         height: 100vh;
       }
+      .menu-drawer, .menu-view, .menu-icon {
+        --ani-duration: 3s;
+      }
+      .menu-icon {
+        --font-size: 32px;
+      }
       .menu-view {
         background: #f6f6f6;
       }
@@ -534,6 +541,12 @@ body > main .page {
   </div>
   <iframe src="menu-drawer-params.html"></iframe>
 </div>
+<p>这个案例中，各部件的动画持续时间是需要“分开”设置的，为什么不在一处设置，然后对全体（或子元素们）生效呢？</p>
+<p>
+  答：类似 .menu-drawer 这类“容器元素”（也就是说 .menu-drawer 里面存在其他元素），
+  如果变量“对全体或子元素”生效，那将可能导致“对容器设置的参数”污染到“容器内的元素”。
+  比如，也许你可能只想让菜单展开得慢一点，其他元素的动画速度，保持原速度。
+</p>
 <div class="footer">
   <div class="prev"><span>上一页：</span><a class="link" href="#menu-icon">menu-icon</a>
   </div>
