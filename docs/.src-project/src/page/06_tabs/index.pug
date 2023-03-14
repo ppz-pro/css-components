@@ -1,4 +1,5 @@
-extends ../page-layout.pug
+extends ../page-layout
+include ../mixins
 
 block page
   h2 CSS #{pageName}
@@ -13,13 +14,4 @@ block page
       code.inline= config.code.basic
   
   p 最简案例：
-  - var basicDemo = demos['']
-  pre
-    code= basicDemo.html
-  .demo-wrapper
-    .header
-      label 效果：
-      div
-        a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
-
-    iframe(src=basicDemo.htmlName)
+  +demo(demos[''])

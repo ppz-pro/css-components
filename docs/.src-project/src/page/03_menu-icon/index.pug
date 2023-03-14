@@ -1,4 +1,5 @@
-extends ../page-layout.pug
+extends ../page-layout
+include ../mixins
 
 block page
   h2 CSS #{pageName}
@@ -13,27 +14,12 @@ block page
       code.inline= config.code.basic
   
   p 最简案例：
-  -var basicDemo = demos['']
-  pre
-    code= basicDemo.html
-  .demo-wrapper
-    .header
-      label 效果：
-      a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
-    iframe(src=basicDemo.htmlName)
+  +demo(demos[''])
 
-  - var bigAndSlow = demos['-big-and-slow']
   h3 慢一点，大一点
   p
     | 传入“参数”
     code.inline font-size
     | 和
     code.inline ani-duration
-
-  pre
-    code= bigAndSlow.html
-  .demo-wrapper
-    .header
-      label 效果：
-      a.link(href=bigAndSlow.htmlName download=bigAndSlow.fullName) 下载源码
-    iframe(src=bigAndSlow.htmlName)
+  +demo(demos['-big-and-slow'])

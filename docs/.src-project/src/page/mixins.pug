@@ -4,5 +4,8 @@ mixin demo(demo)
   .demo-wrapper
     .header
       label 效果：
-      a.link(href=demo.htmlName download=demo.fullName) 下载源码
+      div
+        a.link(href=demo.htmlName download=demo.fullName) 下载源码
+        a.link(href=demo.htmlName) 独立页面打开
+
     iframe(src=demo.htmlName)

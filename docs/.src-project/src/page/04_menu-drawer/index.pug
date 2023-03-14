@@ -1,4 +1,5 @@
-extends ../page-layout.pug
+extends ../page-layout
+include ../mixins
 
 block page
   h2 CSS #{pageName}
@@ -13,21 +14,7 @@ block page
       code.inline= config.code.basic
   
   p 最简案例：
-  - var basicDemo = demos['']
-  pre
-    code= basicDemo.html
-  .demo-wrapper
-    .header
-      label 效果：
-      a.link(href=basicDemo.htmlName download=basicDemo.fullName) 下载源码
-    iframe(src=basicDemo.htmlName)
+  +demo(demos[''])
 
   h3 来点参数
-  - var paramsDemo = demos['-params']
-  pre
-    code= paramsDemo.html
-  .demo-wrapper
-    .header
-      label 效果:
-      a.link(href=paramsDemo.htmlName download=paramsDemo.fullName) 下载源码
-    iframe(src=paramsDemo.htmlName)
+  +demo(demos['-params'])
