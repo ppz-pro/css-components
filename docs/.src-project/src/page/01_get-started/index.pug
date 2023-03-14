@@ -1,4 +1,5 @@
-extends ../page-layout.pug
+extends ../page-layout
+include ../mixins
 
 block page
   h2 CSS Components
@@ -37,11 +38,5 @@ block page
     | 或者，直接从 
     a.link(href=references.root) CDN
     |  加载，像这样：
-  - var demo = demos['-load-from-cdn']
-  pre
-    code= demo.html
-  .demo-wrapper
-    .header
-      label 效果：
-      a.link(href=demo.htmlName download=demo.fullName) 下载源码
-    iframe(src=demo.htmlName)
+  
+  +demo(demos['-load-from-cdn'])

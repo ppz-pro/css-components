@@ -1,0 +1,8 @@
+mixin demo(demo)
+  pre
+    code= demo.html
+  .demo-wrapper
+    .header
+      label 效果：
+      a.link(href=demo.htmlName download=demo.fullName) 下载源码
+    iframe(src=demo.htmlName)
